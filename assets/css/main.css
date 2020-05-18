@@ -2829,7 +2829,7 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		padding: 8em 0 0.1em 0 ;
+		padding: 0.1em 0 0.1em 0 ;
 	}
 
 		#header .logo {
@@ -2838,7 +2838,6 @@ input, select, textarea {
 			color: inherit;
 			font-weight: 900;
 			letter-spacing: 0.35em;
-			margin: 0 0 2.5em 0;
 			text-decoration: none;
 			text-transform: uppercase;
 			display: inline-block;
@@ -2860,7 +2859,6 @@ input, select, textarea {
 				}
 
 		#header nav {
-			position: fixed;
 			left: 2em;
 			top: 2em;
 			z-index: 10000;
@@ -2948,7 +2946,7 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#header {
-				padding: 4em 0 0.1em 0 ;
+				padding: 0.1em 0 0.1em 0 ;
 			}
 
 				#header nav {
@@ -3313,17 +3311,43 @@ input, select, textarea {
 
 /* Wrapper */
 
-	#wrapper > * > .inner {
+	#wrapper .inner {
 		width: 100%;
 		max-width: 68em;
 		margin: 0 auto;
-		padding: 0 2.5em;
+		padding: 2.5em;
 	}
 
 		@media screen and (max-width: 736px) {
 
-			#wrapper > * > .inner {
-				padding: 0 1.25em;
+			#wrapper .inner {
+				padding: 1.25em;
 			}
 
 		}
+
+
+/* Bootstrap */
+
+.m-0 {margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;} 
+.mx-0 {margin-left: 0; margin-right: 0;} 
+.ml-0 {margin-left: 0;} 
+.mr-0 {margin-right: 0;} 
+.my-0 {margin-top: 0; margin-bottom: 0;} 
+.mt-0 {margin-top: 0;} 
+.mb-0 {margin-bottom: 0;} 
+
+.mx-auto {margin-left: auto; margin-right: auto;} 
+.ml-auto {margin-left: auto;} 
+.mr-auto {margin-right: auto;} 
+.my-auto {margin-top: auto; margin-bottom: auto;} 
+.mt-auto {margin-top: auto;} 
+.mb-auto {margin-bottom: auto;} 
+
+.p-0 {padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;} 
+.px-0 {padding-left: 0; padding-right: 0;} 
+.pl-0 {padding-left: 0;} 
+.pr-0 {padding-right: 0;} 
+.py-0 {padding-top: 0; padding-bottom: 0;} 
+.pt-0 {padding-top: 0;} 
+.pb-0 {padding-bottom: 0;} 
