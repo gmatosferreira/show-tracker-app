@@ -4,13 +4,12 @@ $(document).ready(function(){
         var self = this;
 
         self.menu = ko.observableArray([
-            { name: "Home", url: "index.html"},
-            { name: "Feed", url: "feed.html"},
+            { name: "Feed", url: "index.html"},
             { name: "Watching", url: "watching.html"},
             { name: "To-See", url: "elements.html"},
             { name: "Movies", url: "elements.html"},
             { name: "Series", url: "elements.html"},
-            { name: "Friends", url: "elements.html"},
+            { name: "Friends", url: "friends.html"},
             { name: "Calendar", url: "elements.html"},
             { name: "Settings", url: "elements.html"},
         ]);
