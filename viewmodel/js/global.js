@@ -11,7 +11,7 @@ $(document).ready(function(){
             { name: "Series", url: "elements.html"},
             { name: "Friends", url: "friends.html"},
             { name: "Calendar", url: "calendar.html"},
-            { name: "Settings", url: "elements.html"},
+            { name: "Settings", url: "settings.html"},
         ]);
     }
 
