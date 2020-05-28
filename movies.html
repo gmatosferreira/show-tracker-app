@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Movies - ShowTracker</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<div class="inner row">
+		
+						<!-- Nav -->
+						<nav class="pl-0">
+							<ul>
+								<li><a href="#menu">Menu</a></li>
+							</ul>
+						</nav>
+		
+						<!-- Logo -->
+						<div class="my-auto ml-auto row">
+							<div class="form-group my-auto">
+								<select class="form-control" id="exampleFormControlSelect1">
+									<option selected>Currently watching</option>
+									<option>Not watched in a while</option>
+									<option>Watched</option>
+								</select>
+							</div>
+							<div class="my-auto">
+								<i class="far fa-question-circle" data-toggle="tooltip" data-placement="left" data-html="true" 
+								title="Movies - Search for movies here! Do it using the filters or the search bar.
+								Using the Friends' category, you can search from the movies they have on their lists."></i>
+							</div>
+						</a>
+		
+					</div>
+				</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<h2>Show Tracker</h2>
+					<ul>
+						<!-- ko foreach:menu -->
+						<li><a data-bind="attr:{href: url}, text:name"></a></li>
+						<!-- /ko -->
+					</ul>
+				</nav>
+
+				<!-- Main -->
+				<div id="main">
+					<div class="inner">
+						<h1>Movies</h1>
+
+						<section class="tiles">
+							<article class="style1">
+								<span class="image">
+												<img src="images/gonegirl.jpg" alt="" />
+											</span>
+								<a href="episode.html">
+									<h2>Gone Girl</h2>
+									<div class="content">
+										<p>Nick Dunne discovers that the entire media focus has shifted on him when his wife Amy Dunne disappears on the day of their fifth wedding anniversary.</p>
+									</div>
+								</a>
+							</article>
+							<article class="style2">
+								<span class="image">
+									<img src="images/dumbo.jpg" alt="" />
+								</span>
+								<a href="episode.html">
+									<h2>Dumbo</h2>
+									<div class="content">
+										<p>Holt, a circus performer, is tasked with caring for a baby elephant with oversized ears, Dumbo. But when it is discovered that Dumbo can fly, a few wicked men try to take advantage of the situation.</p>
+									</div>
+								</a>
+							</article>
+							<article class="style3">
+								<span class="image">
+												<img src="images/vikings.jpg" alt="" />
+											</span>
+								<a href="episode.html">
+									<h2>Vikings</h2>
+									<h3>S.5 Ep.8</h3>
+									<div class="content">
+										<p>"The Joke"</p>
+										<p>The battle for Kattegat begins; as the two armies line up to fight, the Great Heathen Army must decide between a final plea for peace or all-out war; Floki faces discord among the settlers.</p>
+									</div>
+								</a>
+							</article>
+							<article class="style4">
+								<span class="image">
+												<img src="images/the100.jpeg" alt="" />
+											</span>
+								<a href="episode.html">
+									<h2>The 100</h2>
+									<h3>S.1 Ep.2</h3>
+									<div class="content">
+										<p>"Earth Skills"</p>
+										<p>Having discovered that Jasper may still be alive, Clarke leads a rescue party on a mission to locate him, but the group are shocked at what they find.</p>
+									</div>
+								</a>
+							</article>
+							<article class="style5">
+								<span class="image">
+												<img src="images/you.jpg" alt="" />
+											</span>
+								<a href="episode.html">
+									<h2>You</h2>
+									<h3>S.1 Ep.6</h3>
+									<div class="content">
+										<p>"Amour Fou"</p>
+										<p>Joe's devotion to Beck takes him to a lavish but eerily remote summer home and a face-to-face encounter with an equally obsessed adversary who is just as intent on possessing her heart.</p>
+									</div>
+								</a>
+							</article>
+							<article class="style6">
+								<span class="image">
+												<img src="images/modernfamily.jpg" alt="" />
+											</span>
+								<a href="episode.html">
+									<h2>Modern Family</h2>
+									<h3>S.8 Ep.9</h3>
+									<div class="content">
+										<p>"Snow Ball"</p>
+										<p>Manny and Luke's efforts to put on the school's winter dance get complicated due to a texting error; Gloria, Claire, Mitchell and Cam volunteer at the dance while Jay tries to get out of it by pretending he wants to spend time with Phil.</p>
+									</div>
+								</a>
+							</article>
+						</section>
+					</div>
+				</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/knockout.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<script src="viewmodel/js/global.js"></script>
+
+	</body>
+</html>

@@ -7,7 +7,7 @@ $(document).ready(function(){
             { name: "Feed", url: "index.html"},
             { name: "Watching", url: "watching.html"},
             { name: "To-See", url: "elements.html"},
-            { name: "Movies", url: "elements.html"},
+            { name: "Movies", url: "movies.html"},
             { name: "Series", url: "elements.html"},
             { name: "Friends", url: "friends.html"},
             { name: "Calendar", url: "calendar.html"},
