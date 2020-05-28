@@ -10,7 +10,7 @@ $(document).ready(function(){
             { name: "Movies", url: "elements.html"},
             { name: "Series", url: "elements.html"},
             { name: "Friends", url: "friends.html"},
-            { name: "Calendar", url: "elements.html"},
+            { name: "Calendar", url: "calendar.html"},
             { name: "Settings", url: "elements.html"},
         ]);
     }
