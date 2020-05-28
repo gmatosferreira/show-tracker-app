@@ -60,6 +60,7 @@
 				<div id="main">
 					<div class="inner">
 						<h1>Friends</h1>
+						<h3>Recent activity</h3>
 						<section class="card">
 							<div class="card-body">
 								<div class="col-12 row">
@@ -81,15 +82,47 @@
 										<small>Yesterday</small>
 									</div>
 								</div>
+								
+								<!-- Accordion -->
+								<div class="collapse" id="collapseFriendsActivity">
+									<div class="col-12 row">
+										<div class="col-2">
+											<img class="w-50" src="images/pessoa3.jpg" alt="Mary">
+										</div>
+										<div class="col-10">
+											<h2 class="m-0">Joan just watched S07E01 of The 100!</h2>
+											<small>Yesterday</small>
+										</div>
+									</div>
+			
+									<div class="col-12 row">
+										<div class="col-2">
+											<img class="w-50" src="images/pessoa4.jpg" alt="Mary">
+										</div>
+										<div class="col-10">
+											<h2 class="m-0">Thomas has watched La la land!</h2>
+											<small>3 days ago</small>
+										</div>
+									</div>
+									
+									<div class="col-12 row">
+										<div class="col-2">
+											<img class="w-50" src="images/pessoa5.jpg" alt="Mary">
+										</div>
+										<div class="col-10">
+											<h2 class="m-0">Kensy has watched the fault in our stars!</h2>
+											<small>Last week</small>
+										</div>
+									</div>
+								</div>
 							</div>
 						</section>
 		
 						<div class="col-12 d-flex mt-5">
-							<a href="friends.html" class="button primary fit col-3 mx-auto">More News</a>
+							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapseFriendsActivity" aria-expanded="false" aria-controls="collapseFriendsActivity" id="moreFriendsActivity">Show more News</btn>
 						</div>
 
-						<hr>
-
+						<h3 class="mt-5">Your friends</h3>
 						<section class="card">
 							<div class="card-body">
 								<div class="col-12 row">
@@ -112,29 +145,46 @@
 									</div>
 								</div>
 
-								<div class="col-12 row">
-									<div class="col-2">
-										<img class="w-50" src="images/pessoa2.jpg" alt="Mary">
+								<!-- Accordion -->
+								<div class="collapse" id="collapseFriendsList">
+									
+									<div class="col-12 row">
+										<div class="col-2">
+											<img class="w-50" src="images/pessoa4.jpg" alt="Mary">
+										</div>
+										<div class="col-10">
+											<h2 class="m-0">Thomas Martin, 32</h2>
+											<small>Favourite Series: Peaky Blinders</small>
+										</div>
 									</div>
-									<div class="col-10">
-										<h2 class="m-0">Thomas Martin, 32</h2>
-										<small>Favourite Series: Peaky Blinders</small>
+	
+									<div class="col-12 row">
+										<div class="col-2">
+											<img class="w-50" src="images/pessoa3.jpg" alt="Mary">
+										</div>
+										<div class="col-10">
+											<h2 class="m-0">Joan Adams, 13</h2>
+											<small>Favourite Series: The 100</small>
+										</div>
 									</div>
+	
+									<div class="col-12 row">
+										<div class="col-2">
+											<img class="w-50" src="images/pessoa5.jpg" alt="Mary">
+										</div>
+										<div class="col-10">
+											<h2 class="m-0">Kensy Armstrong, 32</h2>
+											<small>Favourite Series: The Bing Bang Theory</small>
+										</div>
+									</div>
+								
 								</div>
 							</div>
 						</section>
 		
 						<div class="col-12 d-flex mt-5">
-							<a href="friends.html" class="button primary fit col-3 mx-auto">More</a>
+							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapseFriendsList" aria-expanded="false" aria-controls="collapseFriendsList" id="moreFriendsList">Show more friends</btn>
 						</div>
-						
-						<hr>
-
-						<h1>In development</h1>
-						<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-						<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-						<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
 					</div>
 				</div>
 
@@ -192,6 +242,7 @@
 		<script src="assets/js/main.js"></script>
 	
 		<script src="viewmodel/js/global.js"></script>
+		<script src="viewmodel/js/friends.js"></script>
 
 	</body>
 </html>
