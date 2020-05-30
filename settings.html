@@ -60,6 +60,7 @@
 				<div id="main">
 					<div class="inner">
 						<h1>Settings</h1>
+<!-- ACCOUNT -->
 						<h3>Account</h3>
 						<section class="card">
 							<div class="card-body">								
@@ -90,29 +91,80 @@
 						<div class="col-12 d-flex mt-5">
 							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapseAccount" aria-expanded="false" aria-controls="collapseAccount" id="moreAccount">Show</btn>
 						</div>
-
+<!-- NOTIFICATIONS -->
 						<h3>Notifications</h3>
 						<section class="card">
 							<div class="card-body">								
 								<!-- Accordion -->
 								<div class="collapse" id="collapseNotifications">
 									<div class="col-12 row">
-										<h3 class="m-0">IDENTIFICATION</h3>
+										<h3 class="m-0">NEW EPISODE ALERT</h3>
 										<div class="col-4">
-											<img class="w-50" src="images/pessoa3.jpg" alt="Mary">
-											<input type="text" name="demo-name" id="demo-name" value="" placeholder="Username" />
-											<input type="text" name="demo-name" id="demo-name" value="" placeholder="Email" />
 											<br>
-											<a href="#">Change Password</a>
-											<p></p>
-											<a href="#">DELETE ACCOUNT</a>
+											<input type="checkbox" id="notif2" name="notif2" value="2HoursBefore" checked>
+											<label for="notif2"> 2 hours before</label><br>
+											<input type="checkbox" id="notif1" name="notif1" value="1DayBefore" checked>
+											<label for="notif1"> 1 day before</label><br>
+											<input type="checkbox" id="notif3" name="notif3" value="3DayBefore">
+											<label for="notif3"> 3 days before</label><br>
+											
+											<button id="AddNotifButton" onclick="openAddNotif()">Add Notification</button>
+											
+											<div class="form-popup" id="addNotif">
+												<div class="form-container">
+													<h1 class="align-center">Add Alert</h1>											  
+													<p class="align-center">
+													<input type="number" style="width: 55px" id="time" name="time" placeholder="1" >
+													</p>
+													<p class="align-center">
+													<input type="radio" id="hours" name="timeRef" value="hours">
+													<label for="hours">Hours</label>
+													<input type="radio" id="days" name="timeRef" value="days">
+													<label for="days">Days</label>
+													<input type="radio" id="weeks" name="timeRef" value="weeks">
+													<label for="weeks">Weeks</label>
+													</p>
+													<p class="align-center">before</p>
+													<p class="align-center">
+													<button type="submit" class="btn" onclick="closeAddNotif()">Add</button><!-- Add function to save notif -->
+													<button type="submit" class="btn cancel" onclick="closeAddNotif()">Close</button>
+													</p>
+												</div>
+											  </div>
+											  <script>
+												function openAddNotif() {
+												  document.getElementById("addNotif").style.display = "block";
+												}
+												
+												function closeAddNotif() {
+												  document.getElementById("addNotif").style.display = "none";
+												}
+												</script>
 										</div>
-										<div class="col-4">
-											<small>Anna Smith</small>
-											<p></p>
-											<small>user123</small>
-											<p></p>
-											<small>user123@mail.org</small>
+										<div class="col-12 row">
+											<h3 class="m-0 col-4">PUSH NOTIFICATIONS</h3>
+											<div class="col-4">
+												<br>
+												<input type="checkbox" id="newEpAlertP" name="pushNot" value="newEpAlert" checked>
+												<label for="newEpAlertP"> New Episode Alert</label><br>
+												<input type="checkbox" id="newFollowerP" name="pushNot" value="newFollower" checked>
+												<label for="newFollowerP"> New Follower</label><br>
+												<input type="checkbox" id="friendsActP" name="pushNot" value="friendsAct" checked>
+												<label for="friendsActP"> Friends' Activity</label><br>
+											</div>
+										</div>
+										<p></p>
+										<div class="col-12 row">
+											<h3 class="m-0 col-4">EMAIL NOTIFICATIONS</h3>
+											<div class="col-4">
+												<br>
+												<input type="checkbox" id="newEpAlertE" name="emailNot" value="newEpAlert" checked>
+												<label for="newEpAlertE"> New Episode Alert</label><br>
+												<input type="checkbox" id="newFollowerE" name="emailNot" value="newFollower">
+												<label for="newFollowerE"> New Follower</label><br>
+												<input type="checkbox" id="friendsActE" name="emailNot" value="friendsAct">
+												<label for="friendsActE"> Friends' Activity</label><br>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -121,69 +173,83 @@
 						<div class="col-12 d-flex mt-5">
 							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapseNotifications" aria-expanded="false" aria-controls="collapseNotifications" id="moreNotifications">Show</btn>
 						</div>
-
-						<h3 class="mt-5">Your friends</h3>
+<!-- PRIVACY -->
+						<h3>Privacy</h3>
 						<section class="card">
-							<div class="card-body">
-								<div class="col-12 row">
-									<div class="col-2">
-										<img class="w-50" src="images/pessoa1.jpg" alt="Mary">
-									</div>
-									<div class="col-10">
-										<h2 class="m-0">Mary Smith, 19</h2>
-										<small>Favourite Series: The Handmaid's Tale</small>
-									</div>
-								</div>
-		
-								<div class="col-12 row">
-									<div class="col-2">
-										<img class="w-50" src="images/pessoa2.jpg" alt="Mary">
-									</div>
-									<div class="col-10">
-										<h2 class="m-0">John Clay, 19</h2>
-										<small>Favourite Series: The Good Place</small>
-									</div>
-								</div>
-
+							<div class="card-body">								
 								<!-- Accordion -->
-								<div class="collapse" id="collapseFriendsList">
-									
+								<div class="collapse" id="collapsePrivacy">
 									<div class="col-12 row">
-										<div class="col-2">
-											<img class="w-50" src="images/pessoa4.jpg" alt="Mary">
+										<h3 class="m-0">IDENTIFICATION</h3>
+										<div class="col-4">
+											
 										</div>
-										<div class="col-10">
-											<h2 class="m-0">Thomas Martin, 32</h2>
-											<small>Favourite Series: Peaky Blinders</small>
+										<div class="col-4">
+											
 										</div>
 									</div>
-	
-									<div class="col-12 row">
-										<div class="col-2">
-											<img class="w-50" src="images/pessoa3.jpg" alt="Mary">
-										</div>
-										<div class="col-10">
-											<h2 class="m-0">Joan Adams, 13</h2>
-											<small>Favourite Series: The 100</small>
-										</div>
-									</div>
-	
-									<div class="col-12 row">
-										<div class="col-2">
-											<img class="w-50" src="images/pessoa5.jpg" alt="Mary">
-										</div>
-										<div class="col-10">
-											<h2 class="m-0">Kensy Armstrong, 32</h2>
-											<small>Favourite Series: The Bing Bang Theory</small>
-										</div>
-									</div>
-								
 								</div>
 							</div>
 						</section>
-		
 						<div class="col-12 d-flex mt-5">
-							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapseFriendsList" aria-expanded="false" aria-controls="collapseFriendsList" id="moreFriendsList">Show more friends</btn>
+							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapsePrivacy" aria-expanded="false" aria-controls="collapsePrivacy" id="morePrivacy">Show</btn>
+						</div>
+<!-- SECURITY -->
+						<h3>Security</h3>
+						<section class="card">
+							<div class="card-body">								
+								<!-- Accordion -->
+								<div class="collapse" id="collapseSecurity">
+									<div class="col-12 row">
+										<h3 class="m-0">IDENTIFICATION</h3>
+										<div class="col-4">
+											
+										</div>
+										<div class="col-4">
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<div class="col-12 d-flex mt-5">
+							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapseSecurity" aria-expanded="false" aria-controls="collapseSecurity" id="moreSecurity">Show</btn>
+						</div>
+<!-- HELP -->
+						<h3>Help</h3>
+						<section class="card">
+							<div class="card-body">								
+								<!-- Accordion -->
+								<div class="collapse" id="collapseHelp">
+									<div class="col-12 row">
+										<h3 class="m-0">IDENTIFICATION</h3>
+										<div class="col-4">
+											
+										</div>
+										<div class="col-4">
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<div class="col-12 d-flex mt-5">
+							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapseHelp" aria-expanded="false" aria-controls="collapseHelp" id="moreHelp">Show</btn>
+						</div>
+<!-- ABOUT -->
+						<h3>About</h3>
+						<section class="card">
+							<div class="card-body">								
+								<!-- Accordion -->
+								<div class="collapse" id="collapseAbout">
+									<div class="col-12 row">
+										<h3 class="m-0">About us</h3>
+									</div>
+								</div>
+							</div>
+						</section>
+						<div class="col-12 d-flex mt-5">
+							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapseAbout" aria-expanded="false" aria-controls="collapseAbout" id="moreAbout">Show</btn>
 						</div>
 					</div>
 				</div>
