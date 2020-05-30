@@ -3367,3 +3367,5 @@ input, select, textarea {
 	background-color: white;
 	z-index: 9;
   }
+
+  .link:hover{cursor: pointer;}
