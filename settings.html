@@ -60,7 +60,7 @@
 				<div id="main">
 					<div class="inner">
 						<h1>Settings</h1>
-<!-- ACCOUNT -->
+						<!-- ACCOUNT -->
 						<h3>Account</h3>
 						<section class="card">
 							<div class="card-body">								
@@ -91,7 +91,7 @@
 						<div class="col-12 d-flex mt-5">
 							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapseAccount" aria-expanded="false" aria-controls="collapseAccount" id="moreAccount">Show</btn>
 						</div>
-<!-- NOTIFICATIONS -->
+						<!-- NOTIFICATIONS -->
 						<h3>Notifications</h3>
 						<section class="card">
 							<div class="card-body">								
@@ -173,28 +173,40 @@
 						<div class="col-12 d-flex mt-5">
 							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapseNotifications" aria-expanded="false" aria-controls="collapseNotifications" id="moreNotifications">Show</btn>
 						</div>
-<!-- PRIVACY -->
+						<!-- PRIVACY -->
 						<h3>Privacy</h3>
 						<section class="card">
 							<div class="card-body">								
 								<!-- Accordion -->
 								<div class="collapse" id="collapsePrivacy">
 									<div class="col-12 row">
-										<h3 class="m-0">IDENTIFICATION</h3>
-										<div class="col-4">
-											
-										</div>
-										<div class="col-4">
-											
-										</div>
+										<h3 class="m-0 col-4">NETWORKING</h3>
+											<div class="col-4">
+												<br>
+												<input type="checkbox" id="privateAccount" name="pushNot" value="privateAccount" checked>
+												<label for="privateAccount"> Private Account</label><br>
+												<small>When active, your activity is only visible to your friends.</small><br><br>
+											</div>
 									</div>
+									<div class="col-12 row">
+										<h3 class="m-0 col-4">DATA GATHERING</h3>
+											<div class="col-4">
+												<br>
+												<input type="checkbox" id="optimizationData" name="pushNot" value="optimizationData" checked>
+												<label for="optimizationData"> Optimization data</label><br>
+												<small>Allow us to collect anonymous stats about your experience, to improve it</small><br><br>
+												<input type="checkbox" id="ourPartners" name="pushNot" value="ourPartners">
+												<label for="ourPartners"> Our Partners</label><br>
+												<small>Let us share your data with our partners so that they can show you costumized ads.</small><br>
+											</div>
+									</div>		
 								</div>
 							</div>
 						</section>
 						<div class="col-12 d-flex mt-5">
 							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapsePrivacy" aria-expanded="false" aria-controls="collapsePrivacy" id="morePrivacy">Show</btn>
 						</div>
-<!-- SECURITY -->
+						<!-- SECURITY -->
 						<h3>Security</h3>
 						<section class="card">
 							<div class="card-body">								
