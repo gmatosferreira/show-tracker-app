@@ -58,112 +58,20 @@
 					</ul>
 				</nav>
 
+				
 				<!-- Main -->
-				<div id="main">
-					<div class="inner">
-						<h1>Movies</h1>
+				<div id="main" class="d-none">
+					<div class="inner" id="movieData" class="d-none">
+						<h1></h1>
+						<span class="image main"><img src="" alt="" /></span>
+						<p></p>
+					</div>
 
-						<section class="tiles">
-							<article class="style1">
-								<span class="image">
-												<img src="images/gonegirl.jpg" alt="" />
-											</span>
-								<a href="episode.html">
-									<h2>Gone Girl</h2>
-									<div class="content">
-										<p>Nick Dunne discovers that the entire media focus has shifted on him when his wife Amy Dunne disappears on the day of their fifth wedding anniversary.</p>
-									</div>
-								</a>
-							</article>
-							<article class="style2">
-								<span class="image">
-									<img src="images/dumbo.jpg" alt="" />
-								</span>
-								<a href="episode.html">
-									<h2>Dumbo</h2>
-									<div class="content">
-										<p>Holt, a circus performer, is tasked with caring for a baby elephant with oversized ears, Dumbo. But when it is discovered that Dumbo can fly, a few wicked men try to take advantage of the situation.</p>
-									</div>
-								</a>
-							</article>
-							<article class="style3">
-								<span class="image">
-												<img src="images/thematrix.jpg" alt="" />
-											</span>
-								<a href="episode.html">
-									<h2>The Matrix</h2>
-									<div class="content">
-										<p>Thomas Anderson, a computer programmer, is led to fight an underground war against powerful computers who have constructed his entire reality with a system called the Matrix.</p>
-									</div>
-								</a>
-							</article>
-							<article class="style4">
-								<span class="image">
-												<img src="images/lionking.jpg" alt="" />
-											</span>
-								<a href="episode.html">
-									<h2>Lion King</h2>
-									<div class="content">
-										<p>Simba, a young lion prince, flees his kingdom after the murder of his father, Mufasa. Years later, a chance encounter with Nala, a lioness, causes him to return and take back what is rightfully his.</p>
-									</div>
-								</a>
-							</article>
-							<article class="style5">
-								<span class="image">
-												<img src="images/joker.jpg" alt="" />
-											</span>
-								<a href="episode.html">
-									<h2>Joker</h2>
-									<div class="content">
-										<p>In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.</p>
-									</div>
-								</a>
-							</article>
-							<article class="style6">
-								<span class="image">
-												<img src="images/jumanji.jpg" alt="" />
-											</span>
-								<a href="episode.html">
-									<h2>Jumanji</h2>
-									<div class="content">
-										<p>When four students play with a magical video game, they are drawn to the jungle world of Jumanji, where they are trapped as their avatars. To return to the real world, they must finish the game.</p>
-									</div>
-								</a>
-							</article>
-							<article class="style1">
-								<span class="image">
-												<img src="images/anna.jpg" alt="" />
-											</span>
-								<a href="episode.html">
-									<h2>Anna</h2>
-									<div class="content">
-										<p>Beneath a woman's striking beauty lies a secret that will unleash her indelible strength and skill to become one of the most feared assassins on the planet.</p>
-									</div>
-								</a>
-							</article>
-							<article class="style3">
-								<span class="image">
-												<img src="images/deadpool2.jpg" alt="" />
-											</span>
-								<a href="episode.html">
-									<h2>Deadpool 2</h2>
-									<div class="content">
-										<p>Deadpool protects a young mutant Russell from the authorities and gets thrown in prison. However, he escapes and forms a team of mutants to prevent a time-travelling mercenary from killing Russell.</p>
-									</div>
-								</a>
-							</article>
-							<article class="style5">
-								<span class="image">
-												<img src="images/adastra.jpg" alt="" />
-											</span>
-								<a href="episode.html">
-									<h2>Ad Astra</h2>
-									<div class="content">
-										<p>Thirty years ago, Clifford McBride led a voyage into deep space, but the ship and crew were never heard from again. Now his son -- a fearless astronaut -- must embark on a daring mission to Neptune to uncover the truth about his missing father and a mysterious power surge that threatens the stability of the universe.</p>
-									</div>
-								</a>
-							</article>
-						</section>
+					<div class="inner d-flex flex-column">
+						<h2>Episodes</h2>
+						<img class="loading mx-auto" src="images/loading.gif"/>
+						<p id="episodesError" class="d-none">Unfortunately we don't have intel in this series episodes... :(</p>
+						<div id="episodes" class="d-none"></div>
 					</div>
 				</div>
 
@@ -182,6 +90,7 @@
 		<script src="assets/js/main.js"></script>
 
 		<script src="viewmodel/js/global.js"></script>
+		<script src="viewmodel/js/movies.js"></script>
 
 	</body>
 </html>

@@ -1,0 +1,68 @@
+{
+    "data": [
+        {
+            "aliases": [],
+            "banner": "/banners/movies/111/backgrounds/111.jpg",
+            "releaseDate": "2019-02-08",
+            "genres": [
+                "comedy",
+                "fantasy"
+            ],
+            "id": 111,
+            "image": "/banners/movies/111/posters/111.jpg",
+            "country": "global",
+            "overview": "Ali Davis is a successful sports agent who is constantly sexism in the United States by her male colleagues. When Ali is passed up for a well-deserved partnership at her firm, she questions what more she needs to do to succeed in a man’s world, until she gains the ability to hear men’s thoughts from an encounter with a psychic (Sister). With her newfound power, Ali looks to outsmart her colleagues as she races to sign the next basketball superstar (Jamal Barry), but the lengths she has to go to will put her relationship with her three best friends, office assistant and a potential new love interest to the test. ",
+            "movieName": "What Men Want",
+            "slug": "what-men-want"
+        },
+        {
+            "aliases": [],
+            "banner": "/banners/movies/666/backgrounds/666.jpg",
+            "releaseDate": "2003-05-30",
+            "genres": [
+                "horror",
+                "thriler"
+            ],
+            "id": 666,
+            "image": "/banners/movies/666/posters/666.jpg",
+            "country": "global",
+            "overview": "College students Rich Stoker and Halley Smith are rock climbing in a remote forest of West Virginia. When Rich reaches the top, he is suddenly murdered before he can help Halley up. Someone then begins to yank her up the cliff so she cuts the rope and falls. She attempts to escape but gets pulled back into the woods, screaming.",
+            "movieName": "Wrong Turn",
+            "slug": "wrong-turn"
+        },
+        {
+            "aliases": [],
+            "banner": "/banners/movies/7456/backgrounds/7453.jpg",
+            "releaseDate": "2007-09-08",
+            "genres": [
+                "horror",
+                "action",
+                "science-fiction"
+            ],
+            "id": 7453,
+            "image": "/banners/movies/7456/posters/7453.jpg",
+            "country": "global",
+            "overview": "Film footage from a news crew shows a story about an immigrant man killing his wife and son before committing suicide. The son and wife turn into zombies and kill several medical personnel and police officers, but leave one medic and a reporter bitten before being killed. The narrator, Debra, explains that most of the footage, which was recorded by the cameraman, was never broadcast.",
+            "movieName": "Diary Of The Dead",
+            "slug": "diary-of-the-dead"
+        },
+        {
+            "aliases": [],
+            "banner": "/banners/movies/2334/backgrounds/2334.jpg",
+            "releaseDate": "2011-03-02",
+            "genres": [
+                "adventure",
+                "animataion",
+                "comedy",
+                "family",
+                "western"
+            ],
+            "id": 2334,
+            "image": "/banners/movies/2334/posters/2334.jpg",
+            "country": "global",
+            "overview": "A pet chameleon (Johnny Depp) becomes stranded in the Mojave Desert of Nevada after his Vivarium falls from his owners' car by accident. He meets an armadillo named Roadkill (Alfred Molina) who is seeking the mystical \"Spirit of the West\". While wandering the desert, he narrowly avoids being eaten by a vicious red-tailed hawk before meeting the desert iguana Beans (Isla Fisher). Beans takes him to Dirt, an American frontier town populated by desert animals.",
+            "movieName": "Rango",
+            "slug": "rango"
+        }
+    ]
+}
