@@ -3,19 +3,29 @@ $(document).ready(function(){
     // Get keyword to serach for
     params = (new URL(window.location)).searchParams;
     id = params.get('id');
+    console.log(id);
+    params += id;
 
-    if (id==null || id=="")
-        window.history.back();
-    
+        
     // Get movie data
     movie = null;
+    genres = null;
+    html = "";
     $.getJSON("https://ihc.gmatos.pt/DB/movies.json", function(json) {
         json['data'].forEach((value, index) => {
             if (value['id']==id) {
                 movie = value;
+                genres = value['genres']
                 console.log(movie);
+                console.log(genres);
             }
         });
+
+        genres.forEach((value, index) => {
+            html += `<h2 class="small mt-5">Genres ${genres}</h2>`;
+            html += `<section class="card"><div class="card-body row mx-0">`;
+        });      
+        
 
         if (movie==null)
             window.history.back();
@@ -31,6 +41,9 @@ $(document).ready(function(){
         $("#main").removeClass("d-none");
         $("#main").hide();
         $("#main").fadeIn();
+
+
+        $("#main").append(html);
     });
 
 });
