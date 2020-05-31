@@ -5,74 +5,85 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Episode - ShowTracker</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
 
-				<!-- Header -->
-				<header id="header">
-					<div class="inner row">
-		
-						<!-- Nav -->
-						<nav class="pl-0">
-							<ul>
-								<li><a href="#menu">Menu</a></li>
-							</ul>
-						</nav>
-		
-						<!-- Logo -->
-						<div class="my-auto ml-auto row">
-							<div class="my-auto">
-								<h2 class="link return"><i class="fas fa-arrow-circle-left"></i></h2>
-							</div>
-						</a>
-		
-					</div>
-				</header>
-		
-				<!-- Menu -->
-				<nav id="menu">
-					<h2>Show Tracker</h2>
-						<ul>
-							<!-- ko foreach:menu -->
-							<li><a data-bind="attr:{href: url}, text:name"></a></li>
-							<!-- /ko -->
-						</ul>
+<head>
+	<title>Episode - ShowTracker</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner row">
+
+				<!-- Nav -->
+				<nav class="pl-0">
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
 				</nav>
 
-				<!-- Main -->
-					<div id="main" class="d-none">
-						<div class="inner">
-							<h1>FRIENDS | S.3 EP.13</h1>
-							<span class="image main"><img src="images/friendsBanner.jpg" alt="" /></span>
-							<p>Chaos ensues when Monica and Chandler decide to share each other's secrets. Rachel gets a promotion and interviews for an assistant. Joey is offered the chance to go back on "Days of Our Lives".</p>
-						</div>
+				<!-- Logo -->
+				<div class="my-auto ml-auto row">
+					<div class="my-auto">
+						<h2 class="link return"><i class="fas fa-arrow-circle-left"></i></h2>
 					</div>
+					</a>
 
-				
+				</div>
+		</header>
 
+		<!-- Menu -->
+		<nav id="menu">
+			<h2>Show Tracker</h2>
+			<ul>
+				<!-- ko foreach:menu -->
+				<li><a data-bind="attr:{href: url}, text:name"></a></li>
+				<!-- /ko -->
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main" class="d-none">
+			<div class="inner" id="episodeData">
+				<h1></h1>
+				<span class="image main"><img src="" alt="" /></span>
+				<p></p>
 			</div>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/knockout.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/popper.min.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+			<div class="inner">
+				<h2>Episodes</h2>
+				<p id="episodesError" class="d-none">Unfortunately we don't have intel in this series episodes... :(</p>
+				<div id="episodes"></div>
+			</div>
+		</div>
 
-		<script src="viewmodel/js/global.js"></script>
-		<script src="viewmodel/js/series.js"></script>
 
-	</body>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/knockout.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<script src="viewmodel/js/global.js"></script>
+	<script src="viewmodel/js/series.js"></script>
+
+</body>
+
 </html>
