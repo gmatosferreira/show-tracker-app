@@ -12,6 +12,7 @@ $(document).ready(function () {
 
     // Get episodes data
     episodes = null;
+    episodeInfo = null;
     $.getJSON("https://ihc.gmatos.pt/DB/seriesDetails.json", function (json) {
         json.forEach((value, index) => {
             if (value['id'] == series) {
@@ -25,7 +26,6 @@ $(document).ready(function () {
         }
 
         // Get episode from episodes list
-        episodeInfo = null;
         episodes.forEach((value, index) => {
             if (value['airedSeason']==season && value['airedEpisodeNumber']==episode) {
                 episodeInfo = value;
@@ -46,10 +46,21 @@ $(document).ready(function () {
         else
             episodeInfo['filename'] = 'https://thetvdb.com/banners/'+episodeInfo['filename']
 
+        if(!userWatchingSeries(episodeInfo)) {
+            $("#watched").attr('disabled', true);
+            $("#watched").text("Add this series to your watchlist to mark this episode as seen");
+        }
+            
+
         // Add data to HTML
         $("#episodeInfo h1").text(`S. ${episodeInfo['airedSeason']} Ep. ${episodeInfo['airedEpisodeNumber']} | ${episodeInfo['episodeName']}`);
         $("#episodeInfo img").attr('src', episodeInfo['filename']);
         $("#episodeInfo p").text(episodeInfo['overview']);
+        $("#episodeInfo a").attr('href', 'series.html?id='+episodeInfo['seriesId'])
+        if(episodeWatched(episodeInfo)) {
+            $("#watched").attr('disabled', true);
+            $("#watched").text("Watched");
+        }
         
         // Show HTML
         $("#episodeInfo").removeClass("d-none");
@@ -58,5 +69,12 @@ $(document).ready(function () {
 
     });
 
+    // Mark episode as watched
+    $("#watched").click(function(){      
+        success = markEpisodeWatched(episodeInfo);  
+        console.log("Return status: "+success);
+        window.location.reload();
+        console.log(userLogin);
+    });
 
 });

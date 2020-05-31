@@ -46,8 +46,13 @@ $(document).ready(function () {
     }
 
     // User data
+    userLogin = null;
     if(localStorage.getItem('login')!=null)
         userLogin = JSON.parse(localStorage.getItem('login'));
+    
+    console.log("userLogin");
+    console.log(userLogin);
+    console.log("//userLogin");
 
     // User log out
     $("#logout").click(function(){

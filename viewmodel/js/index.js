@@ -55,7 +55,7 @@ $(document).ready(function () {
             if (value['email'] == $("#loginEmail").val().trim()) {
                 if (value['password'] == $("#loginPassword").val().trim()) {
                     registered = true;
-                    localStorage.setItem('login', JSON.stringify({"email":value['email'], "name":value["name"]}));
+                    localStorage.setItem('login', JSON.stringify(value));
                     return;
                 }
             }
