@@ -164,21 +164,27 @@ function markEpisodeWatched(episode) {
 }
 
 // Check if user has series in it's watching list given an episode
-function userWatchingSeries(episode) {
+function userWatchingSeriesByEpisode(episode) {
     console.log("userWatchingSeries()");
+
+    return userWatchingSeriesById(episode['seriesId']);
+}
+
+function userWatchingSeriesById(seriesId) {
+    console.log("userWatchingSeriesById()");
 
     // Get users series seen list
     userSeriesSeen = userLogin['watching']['series'];
     console.log(userSeriesSeen);
 
     // Check if $episode id is in that list
-    episodeSeriesSeen = null;
+    series = null;
     userSeriesSeen.forEach(s => {
-        if (s['id'] == episode['seriesId']) {
-            episodeSeriesSeen = s;
+        if (s['id'] == seriesId) {
+            series = s;
         }
     });
 
-    console.log("//userWatchingSeries()");
-    return !(episodeSeriesSeen==null);
+    console.log("//userWatchingSeriesById()");
+    return !(series==null);
 }
