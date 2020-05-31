@@ -4,13 +4,14 @@ $(document).ready(function(){
     params = (new URL(window.location)).searchParams;
     id = params.get('id');
     console.log(id);
-    params += id;
+
+    if (id == null || id == "")
+        window.history.back();
 
         
     // Get movie data
     movie = null;
     genres = null;
-    html = "";
     $.getJSON("https://ihc.gmatos.pt/DB/movies.json", function(json) {
         json['data'].forEach((value, index) => {
             if (value['id']==id) {
@@ -21,12 +22,6 @@ $(document).ready(function(){
             }
         });
 
-        genres.forEach((value, index) => {
-            html += `<h2 class="small mt-5">Genres ${genres}</h2>`;
-            html += `<section class="card"><div class="card-body row mx-0">`;
-        });      
-        
-
         if (movie==null)
             window.history.back();
 
@@ -36,14 +31,31 @@ $(document).ready(function(){
         if (movie['overview']==null)
             movie['overview'] = "Sinopse não disponível";
         $("#movieData p").text(movie['overview']);
+        $("#movieData #genres").text(genres);
         
         // Show HTML
         $("#main").removeClass("d-none");
         $("#main").hide();
         $("#main").fadeIn();
 
+    });
 
-        $("#main").append(html);
+
+    // Want to see button
+    $("#wantToSeeMovie").click(function () {
+        console.log("#wantToSee");
+        console.log(movie);
+        if (userWatchedMovieByID(movie['id'])) {
+            // Some error might have happened, just reload
+        } else {
+            // Add series to watched list
+            userLogin['watched']['movies'].push({
+                "id": movie['id'],
+                "seen": []
+            });
+            localStorage.setItem('login', JSON.stringify(userLogin));
+        }
+        window.location.reload();
     });
 
 });

@@ -46,6 +46,42 @@ $(document).ready(function(){
         }
     });
 
+    resultsM = []
+    $.getJSON("https://ihc.gmatos.pt/DB/movies.json", function(json) {
+        json['data'].forEach((value, index) => {
+            if (keyword=="" || keyword==null) {
+                resultsM.push(value)   
+            } else if (value['movieName'].toLowerCase().includes(keyword.toLowerCase())) {
+                resultsM.push(value)   
+            }
+        });
+
+        resultsM.forEach((value, index) => {
+            genres = value['genres'];
+            if (value['overview']==undefined)
+                value['overview'] = ""
+            console.log(value['image']);
+            console.log(genres);
+            $("#searchResults").append(`<article class="style1"> <span class="image"> <img src="https://www.thetvdb.com${value['image']}" alt="" /> </span> <a href="movies.html?id=${value['id']}"><h2>${value['movieName']}</h2><div class="content"><p>${genres}</p><p>${value['overview']}</p></div> </a> </article>`);            
+        });
+
+        // Show elements
+        $(".loading").fadeOut();
+        if(resultsM.length==0) {
+            $("#searchZeroResults").removeClass("d-none");
+            $("#searchZeroResults").hide();
+            setTimeout(function(){
+                $("#searchZeroResults").fadeIn();
+            }, 500);
+        } else {
+            $("#searchResults").removeClass("d-none");
+            $("#searchResults").hide();
+            setTimeout(function(){
+                $("#searchResults").fadeIn();
+            }, 500);
+        }
+    });
+
     // Search bar
     $("#searchButton").click(function(){
         window.location.replace("search.html?q="+$("#searchField").val());
