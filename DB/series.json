@@ -1,0 +1,159 @@
+{
+    "data": [
+        {
+            "aliases": [
+                "Das Büro",
+                "The Office US"
+            ],
+            "banner": "/banners/graphical/73244-g9.jpg",
+            "firstAired": "2005-3-24",
+            "id": 73244,
+            "image": "/banners/posters/73244-1.jpg",
+            "network": "NBC",
+            "overview": "A fresh and funny mockumentary-style glimpse into the daily interactions of the eccentric workers at the Dunder Mifflin paper supply company. This fast-paced comedy parodies contemporary American water-cooler culture.",
+            "poster": "/banners/posters/73244-1.jpg",
+            "seriesName": "The Office (US)",
+            "slug": "the-office-us",
+            "status": "Ended"
+        },
+        {
+            "aliases": [
+                "Entre amis",
+                "六人行"
+            ],
+            "banner": "/banners/graphical/79168-g5.jpg",
+            "firstAired": "1994-9-22",
+            "id": 79168,
+            "image": "/banners/posters/79168-27.jpg",
+            "network": "NBC",
+            "overview": "Rachel Green, Ross Geller, Monica Geller, Joey Tribbiani, Chandler Bing and Phoebe Buffay are all friends, living off of one another in the heart of New York City. Over the course of ten years, this average group of buddies goes through massive mayhem, family trouble, past and future romances, fights, laughs, tears and surprises as they learn what it really means to be a friend.",
+            "poster": "/banners/posters/79168-27.jpg",
+            "seriesName": "Friends",
+            "slug": "friends",
+            "status": "Ended"
+        },
+        {
+            "aliases": [],
+            "banner": "/banners/graphical/260449-g3.jpg",
+            "firstAired": "2013-2-22",
+            "id": 260449,
+            "image": "/banners/posters/260449-3.jpg",
+            "network": "History",
+            "overview": "Vikings follows the adventures of Ragnar Lothbrok the greatest hero of his age. The series tells the sagas of Ragnar's band of Viking brothers and his family, as he rises to become King of the Viking tribes. As well as being a fearless warrior, Ragnar embodies the Norse traditions of devotion to the gods, legend has it that he was a direct descendant of Odin, the god of war and warriors.",
+            "poster": "/banners/posters/260449-3.jpg",
+            "seriesName": "Vikings",
+            "slug": "vikings",
+            "status": "Continuing"
+        },
+        {
+            "aliases": [],
+            "banner": "/banners/graphical/268592-g2.jpg",
+            "firstAired": "2014-3-19",
+            "id": 268592,
+            "image": "/banners/posters/268592-2.jpg",
+            "network": "The CW",
+            "overview": "Set ninety-seven years after a nuclear war has destroyed civilization, when a spaceship housing humanity's lone survivors sends one hundred juvenile delinquents back to Earth, in hopes of possibly re-populating the planet.\r\n",
+            "poster": "/banners/posters/268592-2.jpg",
+            "seriesName": "The 100",
+            "slug": "the-100",
+            "status": "Continuing"
+        },
+        {
+            "aliases": [],
+            "banner": "/banners/graphical/5b45130ff0fff.jpg",
+            "firstAired": "2018-9-9",
+            "id": 336924,
+            "image": "/banners/posters/5bd8ff1b472b2.jpg",
+            "network": "Netflix",
+            "overview": "A dangerously charming, intensely obsessive young man goes to extreme measures to insert himself into the lives of those he is transfixed by.",
+            "poster": "/banners/posters/5bd8ff1b472b2.jpg",
+            "seriesName": "You",
+            "slug": "you",
+            "status": "Continuing"
+        },
+        {
+            "aliases": [],
+            "banner": "/banners/text/95011.jpg",
+            "firstAired": "2009-9-23",
+            "id": 95011,
+            "image": "/banners/posters/95011-3.jpg",
+            "network": "ABC (US)",
+            "overview": "This mockumentary explores the many different types of a modern family through the stories of a gay couple, comprised of Mitchell and Cameron, and their daughter Lily, a straight couple, comprised of Phil and Claire, and their three kids, Haley, Alex, and Luke, and a multi-ethnic couple, which is comprised of Jay and Gloria, and her son Manny.",
+            "poster": "/banners/posters/95011-3.jpg",
+            "seriesName": "Modern Family",
+            "slug": "modern-family",
+            "status": "Ended"
+        },
+        {
+            "aliases": [],
+            "banner": "/banners/series/375435/banners/62069735.jpg",
+            "firstAired": "2020-1-17",
+            "id": 375435,
+            "image": "/banners/series/375435/posters/62109720.jpg",
+            "network": "RTP1",
+            "overview": "'Auga seca' is a police drama set in the world of arms trafficking and its connections with the business world, where Teresa (played by the Portuguese actress Victoria Guerra) will be involved in a plot in which nothing is what it seems.",
+            "poster": "/banners/series/375435/posters/62109720.jpg",
+            "seriesName": "Auga Seca",
+            "slug": "auga-seca",
+            "status": "Continuing"
+        },
+        {
+            "aliases": [],
+            "banner": "",
+            "firstAired": "2020-6-3",
+            "id": 382912,
+            "image": "/banners/images/missing/series.jpg",
+            "network": "RTP1",
+            "poster": "/banners/images/missing/series.jpg",
+            "seriesName": "Terra Nova (2020)",
+            "slug": "382912-terra-nova",
+            "status": "Continuing"
+        },
+        {
+            "aliases": [],
+            "banner": "/banners/series/321406/banners/5ec896138944b.jpg",
+            "firstAired": "2015-10-19",
+            "id": 321406,
+            "image": "/banners/series/321406/posters/5ec895e1976f5.jpg",
+            "network": "RTP1",
+            "poster": "/banners/series/321406/posters/5ec895e1976f5.jpg",
+            "seriesName": "5 Para a Meia-Noite",
+            "slug": "321406",
+            "status": "Continuing"
+        },
+        {
+            "aliases": [],
+            "banner": "",
+            "firstAired": "2020-4-28",
+            "id": 381295,
+            "image": "/banners/series/381295/posters/5ec57d3f87f0d.jpg",
+            "network": "RTP1",
+            "poster": "/banners/series/381295/posters/5ec57d3f87f0d.jpg",
+            "seriesName": "O Mundo Não Acaba Assim",
+            "slug": "o-mundo-nao-acaba-assim",
+            "status": "Continuing"
+        },
+        {
+            "aliases": [
+                "Agents of S.H.I.E.L.D.",
+                "Marvel's Agents of S.H.I.E.L.D.: Slingshot",
+                "اجينتس اوف شيلد",
+                "إيجينتس أوف شيلد",
+                "عملاء الدرع",
+                "شيلد",
+                "الدرع",
+                "エージェント・オブ・シールド"
+            ],
+            "banner": "/banners/graphical/263365-g2.jpg",
+            "firstAired": "2013-8-25",
+            "id": 263365,
+            "image": "/banners/posters/263365-9.jpg",
+            "network": "ABC (US)",
+            "overview": "Agent Phil Coulson from the film \"The Avengers\" returns to lead a small, highly skilled group of agents into the field.",
+            "poster": "/banners/posters/263365-9.jpg",
+            "seriesName": "Marvel's Agents of S.H.I.E.L.D.",
+            "slug": "marvels-agents-of-shield",
+            "status": "Continuing"
+        }
+    ]
+}

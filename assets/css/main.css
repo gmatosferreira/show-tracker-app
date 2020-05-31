@@ -3367,3 +3367,9 @@ input, select, textarea {
 	background-color: white;
 	z-index: 9;
   }
+
+  .link:hover{cursor: pointer;}
+
+  .table-none tr {background-color: rgba(255, 255, 255, 0)!important; border: none!important;}
+
+  .loading{width: 6rem; height: auto;}
