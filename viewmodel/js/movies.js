@@ -50,7 +50,7 @@ $(document).ready(function(){
             // Some error might have happened, just reload
         } else {
             // Add series to watched list
-            userLogin['watching']['movies'].push({
+            userLogin['watched']['movies'].push({
                 "id": movieId,
                 "when": new Date().format('Y-m-d\\TH:i:s'),
             });

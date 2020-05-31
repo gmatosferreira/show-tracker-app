@@ -219,7 +219,7 @@ function markEpisodeWatched(episode) {
         if (s['id'] == episode['seriesId']) {
             console.log(userLogin['watching']['series'][index]);
             //"when": (new Date(q.getFullYear(), q.getMonth() + 1, q.getDay())).format('Y-m-d'),
-            userLogin['watching']['series'][index]['seen'].push({
+            userLogin['watched']['series'][index]['seen'].push({
                 "season": episode['airedSeason'],
                 "episode": episode['airedEpisodeNumber'],
                 "when": new Date().format('Y-m-d\\TH:i:s'),
@@ -266,7 +266,7 @@ function userWatchedMovieByID(movieID) {
     console.log("userWatchedMovieByID()");
     userMoviesSeen = null;
     // Get users movies seen list
-    userMoviesSeen = userLogin['watching']['movies'];
+    userMoviesSeen = userLogin['watched']['movies'];
     console.log(userMoviesSeen);
 
     // Check if $episode id is in that list
