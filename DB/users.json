@@ -1,0 +1,94 @@
+[
+    {
+        "email": "user@teste.pt",
+        "password": "teste",
+        "name": "Pedro Mota",
+        "avatar": "images/pessoa1.jpg",
+        "friends": [],
+        "watching": {
+            "series": [
+                { 
+                    "id": "336924",
+                    "seen":[
+                        {
+                            "season": 1,
+                            "episode": 1,
+                            "when": null
+                        }
+                    ]
+                },
+                { 
+                    "id": "268592",
+                    "seen":[
+                        {
+                            "season": 1,
+                            "episode": 1,
+                            "when": null
+                        },
+                        {
+                            "season": 1,
+                            "episode": 2,
+                            "when": null
+                        },
+                        {
+                            "season": 1,
+                            "episode": 3,
+                            "when": null
+                        },
+                        {
+                            "season": 1,
+                            "episode": 4,
+                            "when": null
+                        },
+                        {
+                            "season": 1,
+                            "episode": 5,
+                            "when": null
+                        },
+                        {
+                            "season": 1,
+                            "episode": 6,
+                            "when": null
+                        },
+                        {
+                            "season": 1,
+                            "episode": 7,
+                            "when": null
+                        },
+                        {
+                            "season": 1,
+                            "episode": 8,
+                            "when": null
+                        },
+                        {
+                            "season": 1,
+                            "episode": 9,
+                            "when": null
+                        },
+                        {
+                            "season": 1,
+                            "episode": 10,
+                            "when": null
+                        },
+                        {
+                            "season": 1,
+                            "episode": 11,
+                            "when": null
+                        },
+                        {
+                            "season": 1,
+                            "episode": 12,
+                            "when": null
+                        },
+                        {
+                            "season": 1,
+                            "episode": 13,
+                            "when": null
+                        }
+                    ]
+                }
+            ],
+            "movies": []
+        }
+    }
+]

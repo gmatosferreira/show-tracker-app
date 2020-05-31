@@ -3369,6 +3369,7 @@ input, select, textarea {
   }
 
   .link:hover{cursor: pointer;}
+  .closeDiv:hover{cursor: pointer;}
 
   .table-none tr {background-color: rgba(255, 255, 255, 0)!important; border: none!important;}
 

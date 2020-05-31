@@ -50,6 +50,8 @@
 				<!-- Menu -->
 				<nav id="menu">
 					<h2>Show Tracker</h2>
+					<p class="mb-0">Hello <span data-bind="text:username"></span>!</p>
+					<p class="small mb-5 link" id="logout"><i class="fas fa-sign-out-alt"></i> Log out</p>
 					<ul>
 						<!-- ko foreach:menu -->
 						<li><a data-bind="attr:{href: url}, text:name"></a></li>
