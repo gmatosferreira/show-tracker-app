@@ -45,6 +45,10 @@ $(document).ready(function () {
             window.location.replace("index.html"); 
     }
 
+    // User data
+    if(localStorage.getItem('login')!=null)
+        userLogin = JSON.parse(localStorage.getItem('login'));
+
     // User log out
     $("#logout").click(function(){
         localStorage.removeItem('login');

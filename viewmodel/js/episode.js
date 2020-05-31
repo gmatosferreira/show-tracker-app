@@ -47,7 +47,7 @@ $(document).ready(function () {
             episodeInfo['filename'] = 'https://thetvdb.com/banners/'+episodeInfo['filename']
 
         // Add data to HTML
-        $("#episodeInfo h1").text(episodeInfo['episodeName']);
+        $("#episodeInfo h1").text(`S. ${episodeInfo['airedSeason']} Ep. ${episodeInfo['airedEpisodeNumber']} | ${episodeInfo['episodeName']}`);
         $("#episodeInfo img").attr('src', episodeInfo['filename']);
         $("#episodeInfo p").text(episodeInfo['overview']);
         
