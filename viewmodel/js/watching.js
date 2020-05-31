@@ -47,39 +47,53 @@ $(document).ready(function () {
         $("#feedEmpty").fadeOut();
         $("#feed").fadeOut();
         $("#feed").html('');
+        valueSelect = $(this).val();
         setTimeout(function () {
             $("#loadingFeed").fadeIn();
+            // Determine the request
+            switch (valueSelect) {
+                case "watching":
+                    // Get user's feed
+                    feed = getFeed(seriesWatching, seriesData, seriesDetailsData, 0, 7);
+                    console.log(feed);
+                    // Add content to HTML
+                    $("#main header h1").text("Currently watching");
+                    $("#feedEmpty").text("You haven't seen any series in the past 7 days! Maybe it's time to keep up with an old or search for a new one...");
+                    feed.forEach(s => {
+                        $("#feed").append(`<article class="style1"> <span class="image"> <img src="https://www.thetvdb.com${s['banner']}" alt="" /> </span> <a href="episode.html?series=${s['id']}&se=${s['season']}&ep=${s['episode']}"><h2>${s['seriesName']}</h2><h3>S. ${s['season']} Ep. ${s['episode']}</h3><div class="content"><p>${s['episodeName']}</p></div> </a> </article>`);
+                    });
+                    break;
+                case "suspended":
+                    // Get user's feed
+                    feed = getFeed(seriesWatching, seriesData, seriesDetailsData, 7, 99999999);
+                    console.log(feed);
+                    // Add content to HTML
+                    $("#main header h1").text("Not watched in a while");
+                    $("#feedEmpty").text("You don't have any series not watched for more than 7 days! If you've already seen all your series, maybe it's time to search for a new one...");
+                    feed.forEach(s => {
+                        $("#feed").append(`<article class="style1"> <span class="image"> <img src="https://www.thetvdb.com${s['banner']}" alt="" /> </span> <a href="episode.html?series=${s['id']}&se=${s['season']}&ep=${s['episode']}"><h2>${s['seriesName']}</h2><h3>S. ${s['season']} Ep. ${s['episode']}</h3><div class="content"><p>${s['episodeName']}</p></div> </a> </article>`);
+                    });
+                    break;
+                case "watched":
+                    // Get series watched
+                    watched = getSeriesWatched(seriesWatching, seriesData, seriesDetailsData);
+                    console.log(watched);
+                    // Add content to HTML
+                    $("#main header h1").text("Watched");
+                    $("#feedEmpty").text("It looks like you haven't finished a series yet...");
+                    watched.forEach(value => {
+                        status = ""
+                        if (value['status'] == 'Continuing')
+                            status = "Em exibição"
+                        else if (value['status'] == 'Ended')
+                            status = "Terminada"
+                        if (value['overview'] == undefined)
+                            value['overview'] = ""
+                        $("#feed").append(`<article class="style1"> <span class="image"> <img src="https://www.thetvdb.com${value['poster']}" alt="" /> </span> <a href="series.html?id=${value['id']}"><h2>${value['seriesName']}</h2><div class="content"><p>${status}</p><p>${value['overview']}</p></div> </a> </article>`);
+                    });
+                    break;
+            }
         }, 500);
-        // Determine the request
-        switch ($(this).val()) {
-            case "watching":
-                // Get user's feed
-                feed = getFeed(seriesWatching, seriesData, seriesDetailsData, 0, 7);
-                console.log(feed);
-                // Add content to HTML
-                $("#main header h1").text("Currently watching");
-                $("#feedEmpty").text("You haven't seen any series in the past 7 days! Maybe it's time to keep up with an old or search for a new one...");
-                feed.forEach(s => {
-                    $("#feed").append(`<article class="style1"> <span class="image"> <img src="https://www.thetvdb.com${s['banner']}" alt="" /> </span> <a href="episode.html?series=${s['id']}&se=${s['season']}&ep=${s['episode']}"><h2>${s['seriesName']}</h2><h3>S. ${s['season']} Ep. ${s['episode']}</h3><div class="content"><p>${s['episodeName']}</p></div> </a> </article>`);
-                });
-                break;
-            case "suspended":
-                // Get user's feed
-                feed = getFeed(seriesWatching, seriesData, seriesDetailsData, 7, 99999999);
-                console.log(feed);
-                // Add content to HTML
-                $("#main header h1").text("Not watched in a while");
-                $("#feedEmpty").text("You don't have any series not watched for more than 7 days! If you've already seen all your series, maybe it's time to search for a new one...");
-                feed.forEach(s => {
-                    $("#feed").append(`<article class="style1"> <span class="image"> <img src="https://www.thetvdb.com${s['banner']}" alt="" /> </span> <a href="episode.html?series=${s['id']}&se=${s['season']}&ep=${s['episode']}"><h2>${s['seriesName']}</h2><h3>S. ${s['season']} Ep. ${s['episode']}</h3><div class="content"><p>${s['episodeName']}</p></div> </a> </article>`);
-                });
-                break;
-            case "watched":
-                // Add content to HTML
-                $("#main header h1").text("Watched");
-                $("#feedEmpty").text("It looks like you haven't finished a series yet...");
-                break;
-        }
         // Show HTML (without timeout doesn't work)
         setTimeout(function () {
             $("#loadingFeed").fadeOut();
@@ -89,7 +103,7 @@ $(document).ready(function () {
                 }, 500);
             } else {
                 setTimeout(function () {
-                    if ($("#feedEmpty").hasClass("d-none")) {$("#feedEmpty").removeClass("d-none"), $("#feedEmpty").hide();} 
+                    if ($("#feedEmpty").hasClass("d-none")) { $("#feedEmpty").removeClass("d-none"), $("#feedEmpty").hide(); }
                     $("#feedEmpty").fadeIn();
                 }, 500);
             }

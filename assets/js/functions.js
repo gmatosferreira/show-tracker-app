@@ -24,7 +24,7 @@ function getFeed(seriesWatching, series, seriesDetails, daysAgoMin, daysAgoMax) 
     console.log(seriesDetails);
     seriesDetails.forEach(sd => {
         seriesWatching.forEach(s => {
-            if (s['id'] == sd['id']) {
+            if (s['id'] == sd['id'] && sd['episodes'].length!=s['seen'].length) {
                 console.log(s);
                 nextEpisode = getNextEpisode(s['seen'], sd['episodes']);
                 nextEpisode['id'] = s['id'];
@@ -52,6 +52,40 @@ function getFeed(seriesWatching, series, seriesDetails, daysAgoMin, daysAgoMax) 
 
     console.log("//getFeed()");
     return feed;
+}
+
+function getSeriesWatched(seriesWatching, series, seriesDetails) {
+    console.log("getSeriesWatched()");
+    watched = []
+
+    console.log(seriesWatching);
+    console.log(series);
+    console.log(seriesDetails);
+
+    // Get series watched ids
+    seriesWatchedIds=[]
+    seriesDetails.forEach(sd => {
+        seriesWatching.forEach(s => {
+            if (s['id'] == sd['id']) {
+                if(s['seen'].length==sd['episodes'].length) {
+                    seriesWatchedIds.push(sd['id']);
+                }
+            }
+        });
+    });
+
+    // Get series details given its id
+    series['data'].forEach(serie => {
+        seriesWatchedIds.forEach(id => {
+            if(id==serie['id']) {
+                watched.push(serie);
+            }
+            
+        });
+    });
+
+    console.log("//getSeriesWatched()");
+    return watched;
 }
 
 function getNextEpisode(epSeen, epAll) {
