@@ -54,16 +54,17 @@
 
 		<!-- Main -->
 		<div id="main" class="d-none">
-			<div class="inner" id="episodeData">
+			<div class="inner" id="episodeData" class="d-none">
 				<h1></h1>
 				<span class="image main"><img src="" alt="" /></span>
 				<p></p>
 			</div>
 
-			<div class="inner">
+			<div class="inner d-flex flex-column">
 				<h2>Episodes</h2>
+				<img class="loading mx-auto" src="images/loading.gif"/>
 				<p id="episodesError" class="d-none">Unfortunately we don't have intel in this series episodes... :(</p>
-				<div id="episodes"></div>
+				<div id="episodes" class="d-none"></div>
 			</div>
 		</div>
 

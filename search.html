@@ -60,15 +60,16 @@
 
         <!-- Main -->
         <div id="main">
-            <div class="inner">
+            <div class="inner d-flex flex-column">
                 <header>
                     <h1>Search results for "<span id="searchLabel"></span>"</h1>
                 </header>
+                <img class="loading mx-auto" src="images/loading.gif"/>
                 <!-- All Images -->
-                <section class="tiles" id="searchResults">
+                <section class="tiles d-none" id="searchResults">
                     
                 </section>
-                <p id="searchZeroResults">Não foram encontrados resultados para a pesquisa...</p>
+                <p class="d-none" id="searchZeroResults">Não foram encontrados resultados para a pesquisa...</p>
                
             </div>
         </div>

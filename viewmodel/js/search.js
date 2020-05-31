@@ -5,7 +5,6 @@ $(document).ready(function(){
     keyword = params.get('q');
 
     // Search
-    $("#searchZeroResults").hide();
     $("#searchField").val(keyword);
     $("#searchLabel").text(keyword);
 
@@ -30,8 +29,20 @@ $(document).ready(function(){
             $("#searchResults").append(`<article class="style1"> <span class="image"> <img src="https://www.thetvdb.com${value['poster']}" alt="" /> </span> <a href="series.html?id=${value['id']}"><h2>${value['seriesName']}</h2><div class="content"><p>${status}</p><p>${value['overview']}</p></div> </a> </article>`);            
         });
 
+        // Show elements
+        $(".loading").fadeOut();
         if(results.length==0) {
-            $("#searchZeroResults").fadeIn();
+            $("#searchZeroResults").removeClass("d-none");
+            $("#searchZeroResults").hide();
+            setTimeout(function(){
+                $("#searchZeroResults").fadeIn();
+            }, 500);
+        } else {
+            $("#searchResults").removeClass("d-none");
+            $("#searchResults").hide();
+            setTimeout(function(){
+                $("#searchResults").fadeIn();
+            }, 500);
         }
     });
 

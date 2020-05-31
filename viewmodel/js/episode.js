@@ -41,11 +41,20 @@ $(document).ready(function () {
         if (episodeInfo['overview']=="" || episodeInfo['overview']==undefined || episodeInfo['overview']==null)
             episodeInfo['overview'] = "Episode's overview is not available :("
 
-        // Show data on HTML
+        if (episodeInfo['filename']=="" || episodeInfo['filename']==undefined || episodeInfo['filename']==null)
+            episodeInfo['filename'] = 'https://ihc.gmatos.pt/images/notavailableEpisode.jpg'
+        else
+            episodeInfo['filename'] = 'https://thetvdb.com/banners/'+episodeInfo['filename']
+
+        // Add data to HTML
         $("#episodeInfo h1").text(episodeInfo['episodeName']);
-        $("#episodeInfo img").attr('src', 'https://thetvdb.com/banners/'+episodeInfo['filename']);
+        $("#episodeInfo img").attr('src', episodeInfo['filename']);
         $("#episodeInfo p").text(episodeInfo['overview']);
+        
+        // Show HTML
         $("#episodeInfo").removeClass("d-none");
+        $("#episodeInfo").hide();
+        $("#episodeInfo").fadeIn();
 
     });
 
