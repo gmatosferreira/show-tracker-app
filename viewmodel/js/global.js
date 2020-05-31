@@ -29,7 +29,7 @@ $(document).ready(function () {
             { name: "Watching", url: "watching.html"},
             { name: "To-See", url: "elements.html"},
             { name: "Movies", url: "movies.html"},
-            { name: "Series", url: "elements.html"},
+            { name: "Series", url: "seriesList.html"},
             { name: "Friends", url: "friends.html"},
             { name: "Calendar", url: "calendar.html"},
             { name: "Settings", url: "settings.html"},
