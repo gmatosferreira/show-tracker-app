@@ -266,7 +266,7 @@ function userWatchedMovieByID(movieID) {
     console.log("userWatchedMovieByID()");
     userMoviesSeen = null;
     // Get users movies seen list
-    userMoviesSeen = userLogin['watched']['movies'];
+    userMoviesSeen = userLogin['watching']['movies'];
     console.log(userMoviesSeen);
 
     // Check if $episode id is in that list

@@ -45,13 +45,14 @@ $(document).ready(function(){
     $("#wantToSeeMovie").click(function () {
         console.log("#wantToSee");
         console.log(movie);
-        if (userWatchedMovieByID(movie['id'])) {
+        movieId = movie['id']
+        if (userWatchedMovieByID(movieId)) {
             // Some error might have happened, just reload
         } else {
             // Add series to watched list
-            userLogin['watched']['movies'].push({
-                "id": movie['id'],
-                "seen": []
+            userLogin['watching']['movies'].push({
+                "id": movieId,
+                "when": new Date().format('Y-m-d\\TH:i:s'),
             });
             localStorage.setItem('login', JSON.stringify(userLogin));
         }
