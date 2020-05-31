@@ -27,6 +27,11 @@ $(document).ready(function() {
             feed = getFeed(seriesWatching, series, seriesDetails, 0, 7);
             console.log(feed);
 
+            // Show at max 3 episodes (cut array)
+            if (feed.length>3) {
+                feed = feed.slice(0,3);
+            }
+
             // Add content to HTML
             feed.forEach(s => {
                 if (!s['future'])
