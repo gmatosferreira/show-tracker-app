@@ -18,7 +18,9 @@ function getFeed(seriesWatching, series, seriesDetails, daysAgoMin, daysAgoMax) 
 
     // Get next episode to see data
     q = new Date();
-    today = new Date(q.getFullYear(), q.getMonth() + 1, q.getDay());
+    //today = new Date(q.getFullYear(), q.getMonth() + 1, q.getDay());
+    today = new Date().toLocaleString();
+    console.log(today);
     console.log(seriesDetails);
     seriesDetails.forEach(sd => {
         seriesWatching.forEach(s => {
@@ -30,10 +32,11 @@ function getFeed(seriesWatching, series, seriesDetails, daysAgoMin, daysAgoMax) 
                 nextEpisode['seriesName'] = s['seriesName'];
                 // Only add to feed if lastSeen is between [daysAgoMin, daysAgoMax] days ago
                 moment = Date.parse(lastSeenMoment);
-                days = ((today-moment) / (60*60*24*1000));
-                if (today-moment>=daysAgoMin && today-moment<=daysAgoMax) {
+                console.log("here")
+                console.log(nextEpisode['lastSeen']);
+                if (today-moment>=(daysAgoMin*60*60*24*1000) && today-moment<=(daysAgoMax*60*60*24*1000)) {
                     feed.push(nextEpisode);
-                } else if (daysAgoMin==0 && today-moment<0 && today-moment<daysAgoMax) {
+                } else if (daysAgoMin==0 && today-moment<0 && today-moment<(daysAgoMax*60*60*24*1000)) {
                     // Special scenario if episode has been seen today (because today-moment can return a negative number)
                     feed.push(nextEpisode);
                 } else if (lastSeenMoment==null) {
@@ -42,6 +45,10 @@ function getFeed(seriesWatching, series, seriesDetails, daysAgoMin, daysAgoMax) 
             }
         });
     });
+
+    // Sort by last watched (most recent first) 
+    console.log("New counts");
+    feed.sort(function (a, b) { return Date.parse(b['lastSeen']) - Date.parse(a['lastSeen']); });
 
     console.log("//getFeed()");
     return feed;
@@ -177,10 +184,11 @@ function markEpisodeWatched(episode) {
     userSeriesSeen.forEach((s, index) => {
         if (s['id'] == episode['seriesId']) {
             console.log(userLogin['watching']['series'][index]);
+            //"when": (new Date(q.getFullYear(), q.getMonth() + 1, q.getDay())).format('Y-m-d'),
             userLogin['watching']['series'][index]['seen'].push({
                 "season": episode['airedSeason'],
                 "episode": episode['airedEpisodeNumber'],
-                "when": (new Date(q.getFullYear(), q.getMonth() + 1, q.getDay())).format('Y-m-d'),
+                "when": new Date().format('Y-m-d\\TH:i:s'),
             });
             watched = true;
             return;
