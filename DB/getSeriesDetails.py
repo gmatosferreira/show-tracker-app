@@ -28,16 +28,16 @@ headers = {
 #  Foreach serie, get episodes
 for s in series['data']:
     page = 1
+    episodes = []
     while page>0:
         response = requests.get(f'https://api.thetvdb.com/series/{s["id"]}/episodes?page={page}', headers=headers)
         if (response.status_code!=200):
             page = -1 
             continue
-        episodes = []
         for epi in response.json()['data']:
             episodes.append(epi)
-        seriesEpisodes.append({"id": s['id'], "episodes": episodes})
         page += 1
+    seriesEpisodes.append({"id": s['id'], "episodes": episodes})
 
 returnValue = {"data": seriesEpisodes}
 print(json.dumps(seriesEpisodes))

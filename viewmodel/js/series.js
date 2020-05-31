@@ -54,11 +54,14 @@ $(document).ready(function () {
             return;
         }
 
-        season = 0;
+        // Sort episodes by season
+        episodes.sort(function (a, b) { return a['airedSeason'] == b['airedSeason'] ? a['airedEpisodeNumber'] - b['airedEpisodeNumber'] : a['airedSeason'] - b['airedSeason'] });
+
+        season = -1; //Considering that a series can have season 0 (Vikings...)
         html = ""
         episodes.forEach((value, index) => {
-            if (value['airedSeason'] > season) {
-                if (season != 0)
+            if (value['airedSeason'] != season) {
+                if (season != -1)
                     html += `</div></section>`;
                 season = value['airedSeason'];
                 html += `<h2 class="small mt-5">Season ${season}</h2>`;
@@ -68,8 +71,13 @@ $(document).ready(function () {
                 value['filename'] = 'https://ihc.gmatos.pt/images/notavailableEpisode.jpg'
             else
                 value['filename'] = 'https://thetvdb.com/banners/' + value['filename']
-            html += `<div class="col-4 p-4"><a href="episode.html?series=${id}&se=${season}&ep=${value['airedEpisodeNumber']}"><img class="w-100" src="${value['filename']}" alt=""></a><a href="episode.html?series=${id}&se=${season}&ep=${value['airedEpisodeNumber']}"><h2 class="m-0 text-center">Episode ${value['airedEpisodeNumber']}</h2></a><p class="small text-center">Aired on ${value['firstAired']}</p></div>`;
+            if (!episodeWatched(value)) {
+                html += `<div class="col-4 p-4"><a href="episode.html?series=${id}&se=${season}&ep=${value['airedEpisodeNumber']}"><img class="w-100" src="${value['filename']}" alt=""></a><a href="episode.html?series=${id}&se=${season}&ep=${value['airedEpisodeNumber']}"><h2 class="m-0 text-center">Episode ${value['airedEpisodeNumber']}</h2></a><p class="small text-center">Aired on ${value['firstAired']}</p></div>`;
+            } else {
+                html += `<div class="col-4 p-4"><a href="episode.html?series=${id}&se=${season}&ep=${value['airedEpisodeNumber']}"><img class="w-100" src="${value['filename']}" alt=""></a><a href="episode.html?series=${id}&se=${season}&ep=${value['airedEpisodeNumber']}"><h2 class="m-0 text-center">Episode ${value['airedEpisodeNumber']}</h2></a><p class="small text-center"><i class="fas fa-check-circle mr-2" title="Watched"></i>Aired on ${value['firstAired']}</p></div>`;
+            }
         });
+
 
         // Add content to HTML
         $("#episodes").append(html);

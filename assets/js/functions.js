@@ -2,14 +2,6 @@ function getFeed(seriesWatching, series, seriesDetails) {
     console.log("getFeed()");
     feed = []
 
-    // Get series data
-    /*series['data'].forEach(serie => {
-        seriesWatching.forEach((sw, index) => {
-            if (serie['id'] == sw['id']) {
-                userLogin['watching']['series'][index]['banner'] = serie['banner'];
-            }
-        });
-    });*/
     console.log(seriesWatching);
 
     // Get data on each series the user is watching
@@ -29,6 +21,7 @@ function getFeed(seriesWatching, series, seriesDetails) {
     seriesDetails.forEach(sd => {
         seriesWatching.forEach(s => {
             if (s['id'] == sd['id']) {
+                console.log(s);
                 nextEpisode = getNextEpisode(s['seen'], sd['episodes']);
                 nextEpisode['id'] = s['id'];
                 nextEpisode['banner'] = s['banner'];
@@ -74,12 +67,31 @@ function getNextEpisode(epSeen, epAll) {
                 aired = ep['firstAired'];
                 epName = ep['episodeName'];
                 finished = true;
-                // If next season
+            // If next season
             } else if (ep['airedSeason'] == lastSeasonSeen + 1 && ep['airedEpisodeNumber'] < nextEpisode) {
                 nextSeason = ep['airedSeason'];
                 nextEpisode = ep['airedEpisodeNumber'];
                 epName = ep['episodeName'];
                 aired = ep['firstAired'];
+            // If user hasn't seen any episode yet 
+            } else if (lastSeasonSeen==0 && lastEpisodeSeen==0) {
+                if (nextSeason==0) {
+                    nextSeason = ep['airedSeason'];
+                    nextEpisode = ep['airedEpisodeNumber'];
+                    epName = ep['episodeName'];
+                    aired = ep['firstAired'];
+                } else if (nextSeason > ep['airedSeason']) {
+                    nextSeason = ep['airedSeason'];
+                    nextEpisode = ep['airedEpisodeNumber'];
+                    epName = ep['episodeName'];
+                    aired = ep['firstAired'];
+                } else if (nextSeason == ep['airedSeason']) {
+                    if(nextEpisode > ep['airedEpisodeNumber']) {
+                        nextEpisode = ep['airedEpisodeNumber'];
+                        epName = ep['episodeName'];
+                        aired = ep['firstAired'];
+                    }
+                }
             }
         }
     });
