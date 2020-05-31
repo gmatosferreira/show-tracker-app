@@ -122,8 +122,19 @@
                         }
                     ]
                 }
-            ],
-            "movies": []
+            ]
+        },
+        "watched": {
+            "movies": [
+                {
+                    "id": 666,
+                    "when": null
+                },
+                {
+                    "id": 111,
+                    "when": null
+                }
+            ]
         }
     }
 ]

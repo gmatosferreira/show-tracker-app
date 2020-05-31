@@ -258,5 +258,25 @@ function userWatchingSeriesById(seriesId) {
     });
 
     console.log("//userWatchingSeriesById()");
-    return !(series == null);
+    return !(series==null);
+}
+
+
+function userWatchedMovieByID(movieID) {
+    console.log("userWatchedMovieByID()");
+    userMoviesSeen = null;
+    // Get users movies seen list
+    userMoviesSeen = userLogin['watched']['movies'];
+    console.log(userMoviesSeen);
+
+    // Check if $episode id is in that list
+    movie = null;
+    userMoviesSeen.forEach(m => {
+        if (m['id'] == movieID) {
+            movie = m;
+        }
+    });
+
+    console.log("//userWatchedMovieByID()");
+    return !(movie==null);
 }
