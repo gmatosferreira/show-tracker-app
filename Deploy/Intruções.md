@@ -18,7 +18,7 @@ Para aceder ao servidor e editar os seus ficheiros, deve ser utilizada a seguint
 
 ```
 user: user@ihc.gmatos.pt
-pass: #UHCua2020
+pass: #IHCua2020
 ```
 
 Pode ser utilizada a aplicação https://filezilla-project.org/, podendo para facilitar a configuração do acesso ser importado o ficheiro `Ftp user@ihc.gmatos.pt.xml` (disponível na mesma pasta que este ficheiro), de acordo com as instruções disponíveis em https://www.amen.pt/assistencia/configuracao-automatica-ftp/ (a partir da terceira imagem, inclusive).
