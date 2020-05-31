@@ -2,6 +2,10 @@
 
 $(document).ready(function () {
 
+    $(".return").click(function(){
+        window.history.back();
+    });
+
     // Menu
     function headerViewModel() {
         var self = this;
