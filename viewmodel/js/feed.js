@@ -24,7 +24,7 @@ $(document).ready(function() {
         $.getJSON("https://ihc.gmatos.pt/DB/seriesDetails.json", function(seriesDetails) {
             
             // Get user's feed
-            feed = getFeed(seriesWatching, series, seriesDetails)
+            feed = getFeed(seriesWatching, series, seriesDetails, 0, 7);
             console.log(feed);
 
             // Add content to HTML

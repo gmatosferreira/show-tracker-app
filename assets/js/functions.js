@@ -1,4 +1,4 @@
-function getFeed(seriesWatching, series, seriesDetails) {
+function getFeed(seriesWatching, series, seriesDetails, daysAgoMin, daysAgoMax) {
     console.log("getFeed()");
     feed = []
 
@@ -17,6 +17,8 @@ function getFeed(seriesWatching, series, seriesDetails) {
     console.log(seriesWatching);
 
     // Get next episode to see data
+    q = new Date();
+    today = new Date(q.getFullYear(), q.getMonth() + 1, q.getDay());
     console.log(seriesDetails);
     seriesDetails.forEach(sd => {
         seriesWatching.forEach(s => {
@@ -26,7 +28,17 @@ function getFeed(seriesWatching, series, seriesDetails) {
                 nextEpisode['id'] = s['id'];
                 nextEpisode['banner'] = s['banner'];
                 nextEpisode['seriesName'] = s['seriesName'];
-                feed.push(nextEpisode);
+                // Only add to feed if lastSeen is between [daysAgoMin, daysAgoMax] days ago
+                moment = Date.parse(lastSeenMoment);
+                days = ((today-moment) / (60*60*24*1000));
+                if (today-moment>=daysAgoMin && today-moment<=daysAgoMax) {
+                    feed.push(nextEpisode);
+                } else if (daysAgoMin==0 && today-moment<0 && today-moment<daysAgoMax) {
+                    // Special scenario if episode has been seen today (because today-moment can return a negative number)
+                    feed.push(nextEpisode);
+                } else if (lastSeenMoment==null) {
+                    feed.push(nextEpisode);
+                }
             }
         });
     });
@@ -40,17 +52,23 @@ function getNextEpisode(epSeen, epAll) {
     console.log("\tgetNextEpisode()");
 
     // Compute last seen
-    lastSeasonSeen = 0;
+    lastSeasonSeen = -1;
     lastEpisodeSeen = 0;
+    lastSeenMoment = null;
 
     epSeen.forEach(ep => {
         if (ep['season'] > lastSeasonSeen) {
             lastSeasonSeen = ep['season'];
             lastEpisodeSeen = ep['episode'];
+            lastSeenMoment = ep['when'];
         } else if (ep['episode'] > lastEpisodeSeen) {
             lastEpisodeSeen = ep['episode'];
+            lastSeenMoment = ep['when'];
         }
     });
+
+    // Sort episodes by season and episode
+    epAll.sort(function (a, b) { return a['airedSeason'] == b['airedSeason'] ? a['airedEpisodeNumber'] - b['airedEpisodeNumber'] : a['airedSeason'] - b['airedSeason'] });
 
     // Find next to see
     nextSeason = 0;
@@ -67,15 +85,15 @@ function getNextEpisode(epSeen, epAll) {
                 aired = ep['firstAired'];
                 epName = ep['episodeName'];
                 finished = true;
-            // If next season
+                // If next season
             } else if (ep['airedSeason'] == lastSeasonSeen + 1 && ep['airedEpisodeNumber'] < nextEpisode) {
                 nextSeason = ep['airedSeason'];
                 nextEpisode = ep['airedEpisodeNumber'];
                 epName = ep['episodeName'];
                 aired = ep['firstAired'];
-            // If user hasn't seen any episode yet 
-            } else if (lastSeasonSeen==0 && lastEpisodeSeen==0) {
-                if (nextSeason==0) {
+                // If user hasn't seen any episode yet 
+            } else if (lastSeasonSeen == -1 && lastEpisodeSeen == 0) {
+                if (nextSeason == 0) {
                     nextSeason = ep['airedSeason'];
                     nextEpisode = ep['airedEpisodeNumber'];
                     epName = ep['episodeName'];
@@ -86,7 +104,7 @@ function getNextEpisode(epSeen, epAll) {
                     epName = ep['episodeName'];
                     aired = ep['firstAired'];
                 } else if (nextSeason == ep['airedSeason']) {
-                    if(nextEpisode > ep['airedEpisodeNumber']) {
+                    if (nextEpisode > ep['airedEpisodeNumber']) {
                         nextEpisode = ep['airedEpisodeNumber'];
                         epName = ep['episodeName'];
                         aired = ep['firstAired'];
@@ -105,7 +123,7 @@ function getNextEpisode(epSeen, epAll) {
         future = true;
     }
 
-    episode = { season: nextSeason, episode: nextEpisode, episodeName: epName, aired: aired, future: future }
+    episode = { season: nextSeason, episode: nextEpisode, episodeName: epName, aired: aired, future: future, lastSeen: lastSeenMoment }
 
     console.log("\t//getNextEpisode()");
     return episode;
@@ -198,5 +216,5 @@ function userWatchingSeriesById(seriesId) {
     });
 
     console.log("//userWatchingSeriesById()");
-    return !(series==null);
+    return !(series == null);
 }

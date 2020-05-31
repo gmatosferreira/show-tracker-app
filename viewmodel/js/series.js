@@ -54,7 +54,7 @@ $(document).ready(function () {
             return;
         }
 
-        // Sort episodes by season
+        // Sort episodes by season and episode
         episodes.sort(function (a, b) { return a['airedSeason'] == b['airedSeason'] ? a['airedEpisodeNumber'] - b['airedEpisodeNumber'] : a['airedSeason'] - b['airedSeason'] });
 
         season = -1; //Considering that a series can have season 0 (Vikings...)

@@ -13,7 +13,7 @@
                         {
                             "season": 1,
                             "episode": 1,
-                            "when": null
+                            "when": "2020-05-31"
                         }
                     ]
                 },
@@ -23,67 +23,67 @@
                         {
                             "season": 1,
                             "episode": 1,
-                            "when": null
+                            "when": "2020-01-01"
                         },
                         {
                             "season": 1,
                             "episode": 2,
-                            "when": null
+                            "when": "2020-01-07"
                         },
                         {
                             "season": 1,
                             "episode": 3,
-                            "when": null
+                            "when": "2020-01-14"
                         },
                         {
                             "season": 1,
                             "episode": 4,
-                            "when": null
+                            "when": "2020-01-21"
                         },
                         {
                             "season": 1,
                             "episode": 5,
-                            "when": null
+                            "when": "2020-01-28"
                         },
                         {
                             "season": 1,
                             "episode": 6,
-                            "when": null
+                            "when": "2020-02-04"
                         },
                         {
                             "season": 1,
                             "episode": 7,
-                            "when": null
+                            "when": "2020-02-11"
                         },
                         {
                             "season": 1,
                             "episode": 8,
-                            "when": null
+                            "when": "2020-02-18"
                         },
                         {
                             "season": 1,
                             "episode": 9,
-                            "when": null
+                            "when": "2020-02-25"
                         },
                         {
                             "season": 1,
                             "episode": 10,
-                            "when": null
+                            "when": "2020-03-03"
                         },
                         {
                             "season": 1,
                             "episode": 11,
-                            "when": null
+                            "when": "2020-03-10"
                         },
                         {
                             "season": 1,
                             "episode": 12,
-                            "when": null
+                            "when": "2020-03-17"
                         },
                         {
                             "season": 1,
                             "episode": 13,
-                            "when": null
+                            "when": "2020-03-24"
                         }
                     ]
                 }
