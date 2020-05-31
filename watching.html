@@ -31,10 +31,10 @@
 						<!-- Logo -->
 						<div class="my-auto ml-auto row">
 							<div class="form-group my-auto">
-								<select class="form-control" id="exampleFormControlSelect1">
-									<option selected>Currently watching</option>
-									<option>Not watched in a while</option>
-									<option>Watched</option>
+								<select class="form-control" id="changeFeed">
+									<option value="watching" selected>Currently watching</option>
+									<option value="suspended">Not watched in a while</option>
+									<option value="watched">Watched</option>
 								</select>
 							</div>
 							<div class="my-auto">
@@ -61,89 +61,14 @@
 
 				<!-- Main -->
 				<div id="main">
-					<div class="inner">
-						<h1>Currently watching</h1>
+					<div class="inner d-flex flex-column">
+						<header>
+							<h1>Currently watching</h1>
+							<p class="d-none" id="feedEmpty">You haven't seen any series in the past 7 days! Maybe it's time to keep up with an old or search for a new one...</p>
+						</header>
+						<img class="loading mx-auto" id="loadingFeed" src="images/loading.gif" />
 
-						<section class="tiles">
-							<article class="style1">
-								<span class="image">
-												<img src="images/theoffice.jpg" alt="" />
-											</span>
-								<a href="episode.html">
-									<h2>The Office</h2>
-									<h3>S.3 Ep.13</h3>
-									<div class="content">
-										<p>"Traveling Salesmen"</p>
-										<p>Andy suggests that Michael team up the staff for sales calls; Dwight tries to cover for Angela when she misses a deadline.</p>
-									</div>
-								</a>
-							</article>
-							<article class="style2">
-								<span class="image">
-												<img src="images/friends.jpg" alt="" />
-											</span>
-								<a href="episode.html">
-									<h2>Friends</h2>
-									<h3>S.7 Ep.4</h3>
-									<div class="content">
-										<p>"The One With Rachel's Assistant"</p>
-										<p>Chaos ensues when Monica and Chandler decide to share each other's secrets. Rachel gets a promotion and interviews for an assistant. Joey is offered the chance to go back on "Days of Our Lives".</p>
-									</div>
-								</a>
-							</article>
-							<article class="style3">
-								<span class="image">
-												<img src="images/vikings.jpg" alt="" />
-											</span>
-								<a href="episode.html">
-									<h2>Vikings</h2>
-									<h3>S.5 Ep.8</h3>
-									<div class="content">
-										<p>"The Joke"</p>
-										<p>The battle for Kattegat begins; as the two armies line up to fight, the Great Heathen Army must decide between a final plea for peace or all-out war; Floki faces discord among the settlers.</p>
-									</div>
-								</a>
-							</article>
-							<article class="style4">
-								<span class="image">
-												<img src="images/the100.jpeg" alt="" />
-											</span>
-								<a href="episode.html">
-									<h2>The 100</h2>
-									<h3>S.1 Ep.2</h3>
-									<div class="content">
-										<p>"Earth Skills"</p>
-										<p>Having discovered that Jasper may still be alive, Clarke leads a rescue party on a mission to locate him, but the group are shocked at what they find.</p>
-									</div>
-								</a>
-							</article>
-							<article class="style5">
-								<span class="image">
-												<img src="images/you.jpg" alt="" />
-											</span>
-								<a href="episode.html">
-									<h2>You</h2>
-									<h3>S.1 Ep.6</h3>
-									<div class="content">
-										<p>"Amour Fou"</p>
-										<p>Joe's devotion to Beck takes him to a lavish but eerily remote summer home and a face-to-face encounter with an equally obsessed adversary who is just as intent on possessing her heart.</p>
-									</div>
-								</a>
-							</article>
-							<article class="style6">
-								<span class="image">
-												<img src="images/modernfamily.jpg" alt="" />
-											</span>
-								<a href="episode.html">
-									<h2>Modern Family</h2>
-									<h3>S.8 Ep.9</h3>
-									<div class="content">
-										<p>"Snow Ball"</p>
-										<p>Manny and Luke's efforts to put on the school's winter dance get complicated due to a texting error; Gloria, Claire, Mitchell and Cam volunteer at the dance while Jay tries to get out of it by pretending he wants to spend time with Phil.</p>
-									</div>
-								</a>
-							</article>
-						</section>
+						<section class="tiles d-none" id="feed"></section>
 					</div>
 				</div>
 
@@ -159,8 +84,10 @@
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script src="assets/js/functions.js"></script>
 
 		<script src="viewmodel/js/global.js"></script>
+		<script src="viewmodel/js/watching.js"></script>
 
 	</body>
 </html>
