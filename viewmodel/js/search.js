@@ -27,7 +27,7 @@ $(document).ready(function(){
             status = "Terminada"
             if (value['overview']==undefined)
                 value['overview'] = ""
-            $("#searchResults").append(`<article class="style1"> <span class="image"> <img src="https://www.thetvdb.com${value['poster']}" alt="" /> </span> <a href="episode.html?id=${value['id']}"><h2>${value['seriesName']}</h2><div class="content"><p>${status}</p><p>${value['overview']}</p></div> </a> </article>`);            
+            $("#searchResults").append(`<article class="style1"> <span class="image"> <img src="https://www.thetvdb.com${value['poster']}" alt="" /> </span> <a href="series.html?id=${value['id']}"><h2>${value['seriesName']}</h2><div class="content"><p>${status}</p><p>${value['overview']}</p></div> </a> </article>`);            
         });
 
         if(results.length==0) {
