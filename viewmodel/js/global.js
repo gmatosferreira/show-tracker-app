@@ -11,7 +11,7 @@ $(document).ready(function () {
         var self = this;
 
         self.menu = ko.observableArray([
-            { name: "Feed", url: "index.html"},
+            { name: "Feed", url: "feed.html"},
             { name: "Watching", url: "watching.html"},
             { name: "To-See", url: "elements.html"},
             { name: "Movies", url: "movies.html"},
@@ -21,7 +21,7 @@ $(document).ready(function () {
             { name: "Settings", url: "settings.html"},
         ]);
     }
-
-    ko.applyBindings(new headerViewModel(), document.getElementById("menu")); // This makes Knockout get to work
+    if (document.getElementById("menu")!=null)
+        ko.applyBindings(new headerViewModel(), document.getElementById("menu")); // This makes Knockout get to work
     
 });
