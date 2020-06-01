@@ -215,7 +215,7 @@ function markEpisodeWatched(episode) {
         if (s['id'] == episode['seriesId']) {
             console.log(userLogin['watching']['series'][index]);
             //"when": (new Date(q.getFullYear(), q.getMonth() + 1, q.getDay())).format('Y-m-d'),
-            userLogin['watched']['series'][index]['seen'].push({
+            userLogin['watching']['series'][index]['seen'].push({
                 "season": episode['airedSeason'],
                 "episode": episode['airedEpisodeNumber'],
                 "when": new Date().format('Y-m-d\\TH:i:s'),

@@ -69,7 +69,7 @@ $(document).ready(function () {
 
         if (!userWatchingSeriesByEpisode(episodeInfo)) {
             $("#watched").attr('disabled', true);
-            $("#watched").text("Add this series to your watchlist to mark this episode as seen");
+            $("#watched").text("Start watching this series (on it's page) to mark this episode as seen");
         }
 
 

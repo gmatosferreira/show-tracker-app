@@ -35,7 +35,7 @@ $(document).ready(function () {
         $("#main").fadeIn();
         if (userWatchingSeriesById(series['id'])) {
             $("#wantToSee").attr('disabled', true);
-            $("#wantToSee").text('This series is in your want to see list :)');
+            $("#wantToSee").text('You are already watching this series :)');
         }
     });
 
