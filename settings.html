@@ -31,10 +31,10 @@
 						<!-- Logo -->
 						<div class="my-auto ml-auto row">
 							<div class="my-auto">
-								<i class="fas fa-search"></i>
+								<i class="fas fa-search link" id="searchButton"></i>
 							</div>
 							<div>
-								<input type="text" name="demo-name" id="demo-name" value="" placeholder="Search" />
+								<input type="text" name="searchField" id="searchField" value="" placeholder="Search" />
 							</div>
 							<div class="my-auto">
 								<i class="far fa-question-circle" data-toggle="tooltip" data-placement="left" data-html="true" 
@@ -60,8 +60,9 @@
 
 				<!-- Main -->
 				<div id="main">
-					<div class="inner">
+					<div class="inner d-flex flex-column" id="settingTopics">
 						<h1>Settings</h1>
+						<p id="searchZeroResults" class="d-none">Sorry, but your search doesn't match any settings section... :(</p>
 						<!-- ACCOUNT -->
 						<h3>Account</h3>
 						<section class="card">
@@ -71,28 +72,26 @@
 									<div class="col-12 row">
 										<h3 class="m-0">IDENTIFICATION</h3>
 										<div class="col-4">
-											<img class="w-50" src="images/pessoa3.jpg" alt="Mary">
+											<img class="w-50" src="images/pessoa2.jpg" alt="Mary">
 											<input type="text" name="demo-name" id="demo-name" value="" placeholder="Username" />
 											<input type="text" name="demo-name" id="demo-name" value="" placeholder="Email" />
 											<br>
-											<a href="#">Change Password</a>
+											<p class="notImplemented link">Change Password</p>
 											<p></p>
-											<a href="#">DELETE ACCOUNT</a>
+											<p class="notImplemented link">DELETE ACCOUNT</p>
 										</div>
 										<div class="col-4">
-											<small>Anna Smith</small>
+											<small id="userName">Anna Smith</small>
 											<p></p>
-											<small>user123</small>
+											<small id="userId">pedroMota19</small>
 											<p></p>
-											<small>user123@mail.org</small>
+											<small id="userEmail">user123@mail.org</small>
 										</div>
 									</div>
 								</div>
 							</div>
 						</section>
-						<div class="col-12 d-flex mt-5">
-							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapseAccount" aria-expanded="false" aria-controls="collapseAccount" id="moreAccount">Show</btn>
-						</div>
+						<btn class="button primary fit col-3 mt-5 mx-auto" data-toggle="collapse" data-target="#collapseAccount" aria-expanded="false" aria-controls="collapseAccount" id="moreAccount">Show</btn>
 						<!-- NOTIFICATIONS -->
 						<h3>Notifications</h3>
 						<section class="card">
@@ -103,13 +102,17 @@
 										<h3 class="m-0">NEW EPISODE ALERT</h3>
 										<div class="col-4">
 											<br>
-											<input type="checkbox" id="notif2" name="notif2" value="2HoursBefore" checked>
-											<label for="notif2"> 2 hours before</label><br>
-											<input type="checkbox" id="notif1" name="notif1" value="1DayBefore" checked>
-											<label for="notif1"> 1 day before</label><br>
-											<input type="checkbox" id="notif3" name="notif3" value="3DayBefore">
-											<label for="notif3"> 3 days before</label><br>
-											
+											<div id="episodeAlerts" data-counter="3">
+												<input type="checkbox" id="notif2" name="notif2" value="2HoursBefore" checked>
+												<label for="notif2"> 2 hours before</label><br>
+												<input type="checkbox" id="notif1" name="notif1" value="1DayBefore" checked>
+												<label for="notif1"> 1 day before</label><br>
+												<input type="checkbox" id="notif3" name="notif3" value="3DayBefore">
+												<label for="notif3"> 3 days before</label><br>
+
+												
+											</div>	
+
 											<button id="AddNotifButton" onclick="openAddNotif()">Add Notification</button>
 											
 											<div class="form-popup" id="addNotif">
@@ -119,7 +122,7 @@
 													<input type="number" style="width: 55px" id="time" name="time" placeholder="1" >
 													</p>
 													<p class="align-center">
-													<input type="radio" id="hours" name="timeRef" value="hours">
+													<input type="radio" id="hours" name="timeRef" value="hours" checked="true">
 													<label for="hours">Hours</label>
 													<input type="radio" id="days" name="timeRef" value="days">
 													<label for="days">Days</label>
@@ -127,19 +130,23 @@
 													<label for="weeks">Weeks</label>
 													</p>
 													<p class="align-center">before</p>
+													<p class="text-danger align-center my-0 py-0 d-none" id="addNotificarionError">Error!</p>
 													<p class="align-center">
-													<button type="submit" class="btn" onclick="closeAddNotif()">Add</button><!-- Add function to save notif -->
+													<button type="submit" class="btn" id="addNotification">Add</button><!-- Add function to save notif -->
 													<button type="submit" class="btn cancel" onclick="closeAddNotif()">Close</button>
 													</p>
 												</div>
 											  </div>
 											  <script>
 												function openAddNotif() {
-												  document.getElementById("addNotif").style.display = "block";
+												  //document.getElementById("addNotif").style.display = "block";
+												  $("#addNotif").fadeIn();
+
 												}
 												
 												function closeAddNotif() {
-												  document.getElementById("addNotif").style.display = "none";
+													$("#addNotif").fadeOut();
+												  //document.getElementById("addNotif").style.display = "none";
 												}
 												</script>
 										</div>
@@ -172,9 +179,7 @@
 								</div>
 							</div>
 						</section>
-						<div class="col-12 d-flex mt-5">
-							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapseNotifications" aria-expanded="false" aria-controls="collapseNotifications" id="moreNotifications">Show</btn>
-						</div>
+						<btn class="button primary fit col-3 mx-auto mt-5 mx-auto" data-toggle="collapse" data-target="#collapseNotifications" aria-expanded="false" aria-controls="collapseNotifications" id="moreNotifications">Show</btn>
 						<!-- PRIVACY -->
 						<h3>Privacy</h3>
 						<section class="card">
@@ -205,9 +210,7 @@
 								</div>
 							</div>
 						</section>
-						<div class="col-12 d-flex mt-5">
-							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapsePrivacy" aria-expanded="false" aria-controls="collapsePrivacy" id="morePrivacy">Show</btn>
-						</div>
+						<btn class="button primary fit col-3 mx-auto mt-5 mx-auto" data-toggle="collapse" data-target="#collapsePrivacy" aria-expanded="false" aria-controls="collapsePrivacy" id="morePrivacy">Show</btn>
 						<!-- SECURITY -->
 						<h3>Security</h3>
 						<section class="card">
@@ -226,9 +229,7 @@
 								</div>
 							</div>
 						</section>
-						<div class="col-12 d-flex mt-5">
-							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapseSecurity" aria-expanded="false" aria-controls="collapseSecurity" id="moreSecurity">Show</btn>
-						</div>
+						<btn class="button primary fit col-3 mx-auto mt-5 mx-auto" data-toggle="collapse" data-target="#collapseSecurity" aria-expanded="false" aria-controls="collapseSecurity" id="moreSecurity">Show</btn>
 						<!-- HELP -->
 						<h3>Help</h3>
 						<section class="card">
@@ -288,9 +289,7 @@
 								</div>
 							</div>
 						</section>
-						<div class="col-12 d-flex mt-5">
-							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapseHelp" aria-expanded="false" aria-controls="collapseHelp" id="moreHelp">Show</btn>
-						</div>
+						<btn class="button primary fit col-3 mx-auto mt-5 mx-auto" data-toggle="collapse" data-target="#collapseHelp" aria-expanded="false" aria-controls="collapseHelp" id="moreHelp">Show</btn>
 						<!-- ABOUT -->
 						<h3>About</h3>
 						<section class="card">
@@ -318,9 +317,7 @@
 								</div>
 							</div>
 						</section>
-						<div class="col-12 d-flex mt-5">
-							<btn class="button primary fit col-3 mx-auto" data-toggle="collapse" data-target="#collapseAbout" aria-expanded="false" aria-controls="collapseAbout" id="moreAbout">Show</btn>
-						</div>
+						<btn class="button primary fit col-3 mx-auto mt-5 mx-auto" data-toggle="collapse" data-target="#collapseAbout" aria-expanded="false" aria-controls="collapseAbout" id="moreAbout">Show</btn>
 					</div>
 				</div>
 

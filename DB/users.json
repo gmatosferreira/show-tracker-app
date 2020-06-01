@@ -2,6 +2,7 @@
     {
         "email": "user@teste.pt",
         "password": "teste",
+        "username": "pedroMota19",
         "name": "Pedro Mota",
         "avatar": "images/pessoa1.jpg",
         "friends": [],
