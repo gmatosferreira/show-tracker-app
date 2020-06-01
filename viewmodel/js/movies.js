@@ -11,14 +11,17 @@ $(document).ready(function(){
         
     // Get movie data
     movie = null;
+    mymov = null;
     genres = null;
     $.getJSON("https://ihc.gmatos.pt/DB/movies.json", function(json) {
         json['data'].forEach((value, index) => {
             if (value['id']==id) {
                 movie = value;
+                mymov = value;
                 genres = value['genres']
                 console.log(movie);
                 console.log(genres);
+                console.log(mymov);
             }
         });
 
@@ -37,6 +40,10 @@ $(document).ready(function(){
         $("#main").removeClass("d-none");
         $("#main").hide();
         $("#main").fadeIn();
+        if (userWatchedMovieByID(movie['id'])) {
+            $("#wantToSeeMovie").attr('disabled', true);
+            $("#wantToSeeMovie").text('This movie is in your watched list :)');
+        }
 
     });
 
@@ -44,8 +51,8 @@ $(document).ready(function(){
     // Want to see button
     $("#wantToSeeMovie").click(function () {
         console.log("#wantToSee");
-        console.log(movie);
-        movieId = movie['id']
+        console.log(mymov);
+        movieId = mymov['id'];
         if (userWatchedMovieByID(movieId)) {
             // Some error might have happened, just reload
         } else {
