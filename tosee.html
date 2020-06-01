@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Feed - Show Tracker</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner row">
+
+                <!-- Nav -->
+                <nav class="pl-0">
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Logo -->
+                <div class="my-auto ml-auto row">
+                    <div class="my-auto">
+                        <i class="fas fa-search link" id="searchButton"></i>
+                    </div>
+                    <div>
+                        <input type="text" name="searchField" id="searchField" value="" placeholder="Search" />
+                    </div>
+                    <div class="my-auto">
+                        <i class="far fa-question-circle" data-toggle="tooltip" data-placement="left" data-html="true"
+                            title="To See - Here you can view the movies you added to your 'To See List', as well as the ones you've already seen!"></i>
+                    </div>
+                    </a>
+
+                </div>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <h2>Show Tracker</h2>
+            <p class="mb-0">Hello <span data-bind="text:username"></span>!</p>
+            <p class="small mb-5 link" id="logout"><i class="fas fa-sign-out-alt"></i> Log out</p>
+            <ul>
+                <!-- ko foreach:menu -->
+                <li><a data-bind="attr:{href: url}, text:name"></a></li>
+                <!-- /ko -->
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner d-flex flex-column">
+                <header>
+                    
+                    <p class="d-none" id="feedEmpty">You haven't watched any movie in the past 7 days! Maybe it's time to search for a new one...</p>
+                </header>
+                <img class="loading mx-auto" id="loadingFeed" src="images/loading.gif" />
+                <!-- All Images -->
+                <h1>Movies To See</h1>
+                <section class="tiles mb-5 pb-5" id="moviesToSee"></section>
+                <div class="col-12 d-flex mt-5">
+                    <a href="movies.html" class="button primary fit col-3 mx-auto">More movies</a>
+                </div>
+                <br><br>
+                <h1>Movies Watched</h1>
+                <section class="tiles mb-5 pb-5" id="moviesSeen"></section>
+                
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/knockout.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/functions.js"></script>
+
+    <script src="viewmodel/js/global.js"></script>
+    <script src="viewmodel/js/tosee.js"></script>
+
+</body>
+
+</html>
