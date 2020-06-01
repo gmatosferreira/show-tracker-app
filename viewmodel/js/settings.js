@@ -47,5 +47,11 @@ $(document).ready(function(){
     $('#collapseAbout').on('hide.bs.collapse', function () {
         $("#moreAbout").text("Show ");
     });
+
+    // Want to see button
+    $("#SendBttn").click(function () {
+        $("#SendBttn").attr('disabled', true);
+        $("#SendBttn").text('Message sent!');
+    });
     
 });
