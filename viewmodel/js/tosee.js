@@ -17,8 +17,10 @@ $(document).ready(function() {
     console.log(userLogin);
 
     moviesToSeeList = userLogin['to see']['movies'];
+    moviesSeenList = userLogin['watched']['movies'];
 
     console.log(moviesToSeeList);
+    console.log(moviesSeenList);
 
     $.getJSON("https://ihc.gmatos.pt/DB/movies.json", function(movies) {
         console.log(movies);
@@ -28,13 +30,20 @@ $(document).ready(function() {
             resultsM.push(value);
         });
         console.log(resultsM);
-        console.log(moviesToSee)
 
         moviesToSeeList.forEach(mts => {
             resultsM.forEach(m =>{
                 if(mts['id'] == m['id']){
                     genres = m['genres'];
                     $("#moviesToSee").append(`<article class="style1"> <span class="image"> <img src="https://www.thetvdb.com${m['image']}" alt="" /> </span> <a href="movies.html?id=${m['id']}"><h2>${m['movieName']}</h2><div class="content"><p>${genres}</p><p>${m['overview']}</p></div> </a> </article>`); 
+                }
+            });
+        });
+        moviesSeenList.forEach(ms => {
+            resultsM.forEach(m =>{
+                if(ms['id'] == m['id']){
+                    genres = m['genres'];
+                    $("#moviesSeen").append(`<article class="style1"> <span class="image"> <img src="https://www.thetvdb.com${m['image']}" alt="" /> </span> <a href="movies.html?id=${m['id']}"><h2>${m['movieName']}</h2><div class="content"><p>${genres}</p><p>${m['overview']}</p><p>${ms['when']}</p></div> </a> </article>`); 
                 }
             });
         });
@@ -46,6 +55,19 @@ $(document).ready(function() {
                 $("#moviesToSee").hide();   
                 setTimeout(function(){
                     $("#moviesToSee").fadeIn();   
+                }, 500);    
+            } else {
+                $("#feedEmpty").removeClass("d-none");   
+                $("#feedEmpty").hide();   
+                setTimeout(function(){
+                    $("#feedEmpty").fadeIn();   
+                }, 500); 
+            }
+            if ($("#moviesSeen").children().length!=0) {
+                $("#moviesSeen").removeClass("d-none");   
+                $("#moviesSeen").hide();   
+                setTimeout(function(){
+                    $("#moviesSeen").fadeIn();   
                 }, 500);    
             } else {
                 $("#feedEmpty").removeClass("d-none");   

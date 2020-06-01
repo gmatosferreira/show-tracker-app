@@ -27,7 +27,7 @@ $(document).ready(function () {
         self.menu = ko.observableArray([
             { name: "Feed", url: "feed.html"},
             { name: "Watching", url: "watching.html"},
-            { name: "To-See", url: "elements.html"},
+            { name: "To-See", url: "tosee.html"},
             { name: "Movies", url: "moviesList.html"},
             { name: "Series", url: "seriesList.html"},
             { name: "Friends", url: "friends.html"},
