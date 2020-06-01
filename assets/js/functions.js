@@ -17,10 +17,6 @@ function getFeed(seriesWatching, series, seriesDetails, daysAgoMin, daysAgoMax) 
     console.log(seriesWatching);
 
     // Get next episode to see data
-    q = new Date();
-    //today = new Date(q.getFullYear(), q.getMonth() + 1, q.getDay());
-    today = new Date().toLocaleString();
-    console.log(today);
     console.log(seriesDetails);
     seriesDetails.forEach(sd => {
         seriesWatching.forEach(s => {
@@ -34,9 +30,9 @@ function getFeed(seriesWatching, series, seriesDetails, daysAgoMin, daysAgoMax) 
                 moment = Date.parse(lastSeenMoment);
                 console.log("here")
                 console.log(nextEpisode['lastSeen']);
-                if (today-moment>=(daysAgoMin*60*60*24*1000) && today-moment<=(daysAgoMax*60*60*24*1000)) {
+                if (new Date().getTime()-moment>=(daysAgoMin*60*60*24*1000) && new Date().getTime()-moment<=(daysAgoMax*60*60*24*1000)) {
                     feed.push(nextEpisode);
-                } else if (daysAgoMin==0 && today-moment<0 && today-moment<(daysAgoMax*60*60*24*1000)) {
+                } else if (daysAgoMin==0 && new Date().getTime()-moment<0 && new Date().getTime()-moment<(daysAgoMax*60*60*24*1000)) {
                     // Special scenario if episode has been seen today (because today-moment can return a negative number)
                     feed.push(nextEpisode);
                 } else if (lastSeenMoment==null) {
