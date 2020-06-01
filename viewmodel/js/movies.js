@@ -41,16 +41,20 @@ $(document).ready(function(){
         $("#main").hide();
         $("#main").fadeIn();
         if (userWatchedMovieByID(movie['id'])) {
-            $("#wantToSeeMovie").attr('disabled', true);
-            $("#wantToSeeMovie").text('This movie is in your watched list :)');
+            $("#watchedMovie").attr('disabled', true);
+            $("#watchedMovie").text('This movie is in your watched list :)');
+        }
+        if (userWantToSeeMovieByID(movie['id'])) {
+            $("#toSeeMovie").attr('disabled', true);
+            $("#toSeeMovie").text('This movie is already in your want to see list :)');
         }
 
     });
 
 
-    // Want to see button
-    $("#wantToSeeMovie").click(function () {
-        console.log("#wantToSee");
+    // Watched button
+    $("#watchedMovie").click(function () {
+        console.log("#watchedMovie");
         console.log(mymov);
         movieId = mymov['id'];
         if (userWatchedMovieByID(movieId)) {
@@ -60,6 +64,23 @@ $(document).ready(function(){
             userLogin['watched']['movies'].push({
                 "id": movieId,
                 "when": new Date().format('Y-m-d\\TH:i:s'),
+            });
+            localStorage.setItem('login', JSON.stringify(userLogin));
+        }
+        window.location.reload();
+    });
+
+    // Want to see button
+    $("#toSeeMovie").click(function () {
+        console.log("#toSeeMovie");
+        console.log(mymov);
+        movieId = mymov['id'];
+        if (userWantToSeeMovieByID(movieId)) {
+            // Some error might have happened, just reload
+        } else {
+            // Add series to watched list
+            userLogin['to see']['movies'].push({
+                "id": movieId,
             });
             localStorage.setItem('login', JSON.stringify(userLogin));
         }

@@ -269,7 +269,7 @@ function userWatchedMovieByID(movieID) {
     userMoviesSeen = userLogin['watched']['movies'];
     console.log(userMoviesSeen);
 
-    // Check if $episode id is in that list
+    // Check if $movie id is in that list
     movie = null;
     userMoviesSeen.forEach(m => {
         if (m['id'] == movieID) {
@@ -278,5 +278,25 @@ function userWatchedMovieByID(movieID) {
     });
 
     console.log("//userWatchedMovieByID()");
+    return !(movie==null);
+}
+
+
+function userWantToSeeMovieByID(movieID) {
+    console.log("userWantToSeeMovieByID()");
+    userMoviesToSee = null;
+    // Get users movies seen list
+    userMoviesToSee = userLogin['to see']['movies'];
+    console.log(userMoviesToSee);
+
+    // Check if $movie id is in that list
+    movie = null;
+    userMoviesToSee.forEach(m => {
+        if (m['id'] == movieID) {
+            movie = m;
+        }
+    });
+
+    console.log("//userWantToSeeMovieByID()");
     return !(movie==null);
 }
