@@ -3375,6 +3375,6 @@ input, select, textarea {
 
   .loading{width: 6rem; height: auto;}
 
-  #header{position: fixed; background-color: #ffffff; width: 100%;}
+  #header{position: fixed; background-color: #ffffff; width: 100%; z-index: 10000;}
 
   #main{padding-top: 6rem;}
