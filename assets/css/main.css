@@ -3374,3 +3374,7 @@ input, select, textarea {
   .table-none tr {background-color: rgba(255, 255, 255, 0)!important; border: none!important;}
 
   .loading{width: 6rem; height: auto;}
+
+  #header{position: fixed; background-color: #ffffff; width: 100%;}
+
+  #main{padding-top: 6rem;}
