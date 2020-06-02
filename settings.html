@@ -5,338 +5,378 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Settings - ShowTracker</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
 
-				<!-- Header -->
-				<header id="header">
-					<div class="inner row">
-		
-						<!-- Nav -->
-						<nav class="pl-0">
-							<ul>
-								<li><a href="#menu">Menu</a></li>
-							</ul>
-						</nav>
-		
-						<!-- Logo -->
-						<div class="my-auto ml-auto row">
-							<div class="my-auto">
-								<i class="fas fa-search link" id="searchButton"></i>
-							</div>
-							<div>
-								<input type="text" name="searchField" id="searchField" value="" placeholder="Search" />
-							</div>
-							<div class="my-auto">
-								<i class="far fa-question-circle" data-toggle="tooltip" data-placement="left" data-html="true" 
-								title="Settings - Change your preferences and customize your experience."></i>
-								</i>
-							</div>
-						</a>
-		
-					</div>
-				</header>
+<head>
+	<title>Settings - ShowTracker</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
 
-				<!-- Menu -->
-				<nav id="menu">
-					<h2>Show Tracker</h2>
-					<p class="mb-0">Hello <span data-bind="text:username"></span>!</p>
-					<p class="small mb-5 link" id="logout"><i class="fas fa-sign-out-alt"></i> Log out</p>
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner row">
+
+				<!-- Nav -->
+				<nav class="pl-0">
 					<ul>
-						<!-- ko foreach:menu -->
-						<li><a data-bind="attr:{href: url}, text:name"></a></li>
-						<!-- /ko -->
+						<li><a href="#menu">Menu</a></li>
 					</ul>
 				</nav>
 
-				<!-- Main -->
-				<div id="main">
-					<div class="inner d-flex flex-column" id="settingTopics">
-						<h1>Settings</h1>
-						<p id="searchZeroResults" class="d-none">Sorry, but your search doesn't match any settings section... :(</p>
-						<!-- ACCOUNT -->
-						<h3>Account</h3>
-						<section class="card">
-							<div class="card-body">								
-								<!-- Accordion -->
-								<div class="collapse" id="collapseAccount">
-									<div class="col-12 row">
-										<h3 class="m-0">IDENTIFICATION</h3>
-										<div class="col-4">
-											<img class="w-50" src="images/pessoa2.jpg" alt="Mary">
-											<input type="text" name="demo-name" id="demo-name" value="" placeholder="Username" />
-											<input type="text" name="demo-name" id="demo-name" value="" placeholder="Email" />
-											<br>
-											<p class="notImplemented link">Change Password</p>
-											<p></p>
-											<p class="notImplemented link">DELETE ACCOUNT</p>
-										</div>
-										<div class="col-4">
-											<small id="userName">Anna Smith</small>
-											<p></p>
-											<small id="userId">pedroMota19</small>
-											<p></p>
-											<small id="userEmail">user123@mail.org</small>
-										</div>
-									</div>
-								</div>
-							</div>
-						</section>
-						<btn class="button primary fit col-3 mt-5 mx-auto" data-toggle="collapse" data-target="#collapseAccount" aria-expanded="false" aria-controls="collapseAccount" id="moreAccount">Show</btn>
-						<!-- NOTIFICATIONS -->
-						<h3>Notifications</h3>
-						<section class="card">
-							<div class="card-body">								
-								<!-- Accordion -->
-								<div class="collapse" id="collapseNotifications">
-									<div class="col-12 row">
-										<h3 class="m-0">NEW EPISODE ALERT</h3>
-										<div class="col-4">
-											<br>
-											<div id="episodeAlerts" data-counter="3">
-												<input type="checkbox" id="notif2" name="notif2" value="2HoursBefore" checked>
-												<label for="notif2"> 2 hours before</label><br>
-												<input type="checkbox" id="notif1" name="notif1" value="1DayBefore" checked>
-												<label for="notif1"> 1 day before</label><br>
-												<input type="checkbox" id="notif3" name="notif3" value="3DayBefore">
-												<label for="notif3"> 3 days before</label><br>
-
-												
-											</div>	
-
-											<button id="AddNotifButton" onclick="openAddNotif()">Add Notification</button>
-											
-											<div class="form-popup" id="addNotif">
-												<div class="form-container">
-													<h1 class="align-center">Add Alert</h1>											  
-													<p class="align-center">
-													<input type="number" style="width: 55px" id="time" name="time" placeholder="1" >
-													</p>
-													<p class="align-center">
-													<input type="radio" id="hours" name="timeRef" value="hours" checked="true">
-													<label for="hours">Hours</label>
-													<input type="radio" id="days" name="timeRef" value="days">
-													<label for="days">Days</label>
-													<input type="radio" id="weeks" name="timeRef" value="weeks">
-													<label for="weeks">Weeks</label>
-													</p>
-													<p class="align-center">before</p>
-													<p class="text-danger align-center my-0 py-0 d-none" id="addNotificarionError">Error!</p>
-													<p class="align-center">
-													<button type="submit" class="btn" id="addNotification">Add</button><!-- Add function to save notif -->
-													<button type="submit" class="btn cancel" onclick="closeAddNotif()">Close</button>
-													</p>
-												</div>
-											  </div>
-											  <script>
-												function openAddNotif() {
-												  //document.getElementById("addNotif").style.display = "block";
-												  $("#addNotif").fadeIn();
-
-												}
-												
-												function closeAddNotif() {
-													$("#addNotif").fadeOut();
-												  //document.getElementById("addNotif").style.display = "none";
-												}
-												</script>
-										</div>
-										<div class="col-12 row">
-											<h3 class="m-0 col-4">PUSH NOTIFICATIONS</h3>
-											<div class="col-4">
-												<br>
-												<input type="checkbox" id="newEpAlertP" name="pushNot" value="newEpAlert" checked>
-												<label for="newEpAlertP"> New Episode Alert</label><br>
-												<input type="checkbox" id="newFollowerP" name="pushNot" value="newFollower" checked>
-												<label for="newFollowerP"> New Follower</label><br>
-												<input type="checkbox" id="friendsActP" name="pushNot" value="friendsAct" checked>
-												<label for="friendsActP"> Friends' Activity</label><br>
-											</div>
-										</div>
-										<p></p>
-										<div class="col-12 row">
-											<h3 class="m-0 col-4">EMAIL NOTIFICATIONS</h3>
-											<div class="col-4">
-												<br>
-												<input type="checkbox" id="newEpAlertE" name="emailNot" value="newEpAlert" checked>
-												<label for="newEpAlertE"> New Episode Alert</label><br>
-												<input type="checkbox" id="newFollowerE" name="emailNot" value="newFollower">
-												<label for="newFollowerE"> New Follower</label><br>
-												<input type="checkbox" id="friendsActE" name="emailNot" value="friendsAct">
-												<label for="friendsActE"> Friends' Activity</label><br>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</section>
-						<btn class="button primary fit col-3 mx-auto mt-5 mx-auto" data-toggle="collapse" data-target="#collapseNotifications" aria-expanded="false" aria-controls="collapseNotifications" id="moreNotifications">Show</btn>
-						<!-- PRIVACY -->
-						<h3>Privacy</h3>
-						<section class="card">
-							<div class="card-body">								
-								<!-- Accordion -->
-								<div class="collapse" id="collapsePrivacy">
-									<div class="col-12 row">
-										<h3 class="m-0 col-4">NETWORKING</h3>
-											<div class="col-4">
-												<br>
-												<input type="checkbox" id="privateAccount" name="pushNot" value="privateAccount" checked>
-												<label for="privateAccount"> Private Account</label><br>
-												<small>When active, your activity is only visible to your friends.</small><br><br>
-											</div>
-									</div>
-									<div class="col-12 row">
-										<h3 class="m-0 col-4">DATA GATHERING</h3>
-											<div class="col-4">
-												<br>
-												<input type="checkbox" id="optimizationData" name="pushNot" value="optimizationData" checked>
-												<label for="optimizationData"> Optimization data</label><br>
-												<small>Allow us to collect anonymous stats about your experience, to improve it</small><br><br>
-												<input type="checkbox" id="ourPartners" name="pushNot" value="ourPartners">
-												<label for="ourPartners"> Our Partners</label><br>
-												<small>Let us share your data with our partners so that they can show you costumized ads.</small><br>
-											</div>
-									</div>		
-								</div>
-							</div>
-						</section>
-						<btn class="button primary fit col-3 mx-auto mt-5 mx-auto" data-toggle="collapse" data-target="#collapsePrivacy" aria-expanded="false" aria-controls="collapsePrivacy" id="morePrivacy">Show</btn>
-						<!-- SECURITY -->
-						<h3>Security</h3>
-						<section class="card">
-							<div class="card-body">								
-								<!-- Accordion -->
-								<div class="collapse" id="collapseSecurity">
-									<div class="col-12 row">
-										<h3 class="m-0">IDENTIFICATION</h3>
-										<div class="col-4">
-											
-										</div>
-										<div class="col-4">
-											
-										</div>
-									</div>
-								</div>
-							</div>
-						</section>
-						<btn class="button primary fit col-3 mx-auto mt-5 mx-auto" data-toggle="collapse" data-target="#collapseSecurity" aria-expanded="false" aria-controls="collapseSecurity" id="moreSecurity">Show</btn>
-						<!-- HELP -->
-						<h3>Help</h3>
-						<section class="card">
-							<div class="card-body">								
-								<!-- Accordion -->
-								<div class="collapse" id="collapseHelp">
-									<div class="col-12 row">
-										<h3 class="m-0">Our community can help!</h3>
-												<br>
-												<a href="#">Check out our forum!</a>
-												<br>
-									</div>
-									
-									<div class="col-12 row">
-										<br>
-										<!-- Form -->
-										<section>
-											<h2>Our Team is here for you!</h2>
-											<form method="post" action="#">
-												<div class="row gtr-uniform">
-													<div class="col-6 col-12-xsmall">
-														<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-													</div>
-													<div class="col-6 col-12-xsmall">
-														<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-													</div>
-													<div class="col-12">
-														<select name="demo-category" id="demo-category">
-															<option value="">- Issue -</option>
-															<option value="1">App not working</option>
-															<option value="1">Bug</option>
-															<option value="1">Sugestions</option>
-														</select>
-													</div>
-													<div class="col-6 col-12-small">
-														<input type="checkbox" id="demo-copy" name="demo-copy">
-														<label for="demo-copy">Email me a copy</label>
-													</div>
-													<div class="col-6 col-12-small">
-														<input type="checkbox" id="demo-human" name="demo-human" checked>
-														<label for="demo-human">Not a robot</label>
-													</div>
-													<div class="col-12">
-														<textarea name="demo-message" id="demo-message" placeholder="Tell us your problem!" rows="6"></textarea>
-													</div>
-													<div class="col-12">
-														<ul class="actions">
-															<li>
-																<btn class="button primary" id="SendBttn">Send</btn>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</form>
-										</section>
-									</div>
-								</div>
-							</div>
-						</section>
-						<btn class="button primary fit col-3 mx-auto mt-5 mx-auto" data-toggle="collapse" data-target="#collapseHelp" aria-expanded="false" aria-controls="collapseHelp" id="moreHelp">Show</btn>
-						<!-- ABOUT -->
-						<h3>About</h3>
-						<section class="card">
-							<div class="card-body">								
-								<!-- Accordion -->
-								<div class="collapse" id="collapseAbout">
-									<div class="col-12 row">
-										<h3 class="m-0 col-4">ABOUT US</h3>
-											<div class="col-4">
-												<br>
-												<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac augue et turpis tempor lacinia eu ac libero.</small><br> 
-												<small>Donec condimentum, dui ut imperdiet pellentesque, ex felis ultrices est, non eleifend tellus lacus sed dui. In lacinia libero quis vehicula rutrum.</small><br>
-												<small>© 2020</small><br>
-											</div>
-									</div>
-									<div class="col-12 row">
-										<h3 class="m-0 col-4">OUR POLICIES</h3>
-											<div class="col-4">
-												<br>
-												<a href="#">Privacy Policy</a>
-												<p></p>
-												<a href="#">Usage Terms</a>
-											</div>
-									</div>		
-								</div>
-							</div>
-						</section>
-						<btn class="button primary fit col-3 mx-auto mt-5 mx-auto" data-toggle="collapse" data-target="#collapseAbout" aria-expanded="false" aria-controls="collapseAbout" id="moreAbout">Show</btn>
+				<!-- Logo -->
+				<div class="my-auto ml-auto row">
+					<div class="my-auto">
+						<i class="fas fa-search link" id="searchButton"></i>
 					</div>
+					<div>
+						<input type="text" name="searchField" id="searchField" value="" placeholder="Search" />
+					</div>
+					<div class="my-auto mr-4">
+						<i class="far fa-question-circle" data-toggle="tooltip" data-placement="left" data-html="true"
+							title="Settings - Change your preferences and customize your experience."></i>
+						</i>
+					</div>
+					</a>
+
 				</div>
+		</header>
 
-			
+		<!-- Menu -->
+		<nav id="menu">
+			<h2>Show Tracker</h2>
+			<p class="mb-0">Hello <span data-bind="text:username"></span>!</p>
+			<p class="small mb-5 link" id="logout"><i class="fas fa-sign-out-alt"></i> Log out</p>
+			<ul>
+				<!-- ko foreach:menu -->
+				<li><a data-bind="attr:{href: url}, text:name"></a></li>
+				<!-- /ko -->
+			</ul>
+		</nav>
 
+		<!-- Main -->
+		<div id="main">
+			<div class="inner d-flex flex-column" id="settingTopics">
+				<h1>Settings</h1>
+				<p id="searchZeroResults" class="d-none">Sorry, but your search doesn't match any settings section... :(
+				</p>
+				<!-- ACCOUNT -->
+				<h3>Account</h3>
+				<section class="card">
+					<div class="card-body">
+						<!-- Accordion -->
+						<div class="collapse" id="collapseAccount">
+							<div class="col-12 row">
+								<div class="col-12 col-lg-4 mb-3">
+									<h3 class="m-0">IDENTIFICATION</h3>
+								</div>
+								<div class="col-6 col-lg-4">
+									<img class="w-50" src="images/pessoa2.jpg" alt="Mary">
+									<input type="text" name="demo-name" id="demo-name" value=""
+										placeholder="Username" />
+									<input type="text" name="demo-name" id="demo-name" value="" placeholder="Email" />
+									<br>
+									<p class="notImplemented link">Change Password</p>
+									<p></p>
+									<p class="notImplemented link">DELETE ACCOUNT</p>
+								</div>
+								<div class="col-6 col-lg-4">
+									<small id="userName">Anna Smith</small>
+									<p></p>
+									<small id="userId">pedroMota19</small>
+									<p></p>
+									<small id="userEmail">user123@mail.org</small>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<btn class="button primary fit my-5 mx-auto" data-toggle="collapse" data-target="#collapseAccount"
+					aria-expanded="false" aria-controls="collapseAccount" id="moreAccount">Show</btn>
+				<!-- NOTIFICATIONS -->
+				<h3>Notifications</h3>
+				<section class="card">
+					<div class="card-body">
+						<!-- Accordion -->
+						<div class="collapse" id="collapseNotifications">
+							<div class="col-12 row my-3">
+								<div class="col-12 col-lg-4 mb-3">
+									<h3 class="m-0">NEW EPISODE ALERT</h3>
+								</div>
+								<div class="col-12 col-lg-8">
+									<div id="episodeAlerts" data-counter="3">
+										<input type="checkbox" id="notif2" name="notif2" value="2HoursBefore" checked>
+										<label for="notif2"> 2 hours before</label><br>
+										<input type="checkbox" id="notif1" name="notif1" value="1DayBefore" checked>
+										<label for="notif1"> 1 day before</label><br>
+										<input type="checkbox" id="notif3" name="notif3" value="3DayBefore">
+										<label for="notif3"> 3 days before</label><br>
+
+
+									</div>
+
+									<button id="AddNotifButton" onclick="openAddNotif()">Add Notification</button>
+
+									<div class="form-popup" id="addNotif">
+										<div class="form-container">
+											<h1 class="align-center">Add Alert</h1>
+											<p class="align-center">
+												<input type="number" style="width: 55px" id="time" name="time"
+													placeholder="1">
+											</p>
+											<p class="align-center">
+												<input type="radio" id="hours" name="timeRef" value="hours"
+													checked="true">
+												<label for="hours">Hours</label>
+												<input type="radio" id="days" name="timeRef" value="days">
+												<label for="days">Days</label>
+												<input type="radio" id="weeks" name="timeRef" value="weeks">
+												<label for="weeks">Weeks</label>
+											</p>
+											<p class="align-center">before</p>
+											<p class="text-danger align-center my-0 py-0 d-none"
+												id="addNotificarionError">Error!</p>
+											<p class="align-center">
+												<button type="submit" class="btn" id="addNotification">Add</button>
+												<!-- Add function to save notif -->
+												<button type="submit" class="btn cancel"
+													onclick="closeAddNotif()">Close</button>
+											</p>
+										</div>
+									</div>
+									<script>
+										function openAddNotif() {
+											//document.getElementById("addNotif").style.display = "block";
+											$("#addNotif").fadeIn();
+
+										}
+
+										function closeAddNotif() {
+											$("#addNotif").fadeOut();
+											//document.getElementById("addNotif").style.display = "none";
+										}
+									</script>
+								</div>
+							</div>
+							<div class="col-12 row my-3">
+								<div class="col-12 col-lg-4 my-3">
+									<h3 class="m-0">PUSH NOTIFICATIONS</h3>
+								</div>
+								<div class="col-12 col-lg-8">
+									<input type="checkbox" id="newEpAlertP" name="pushNot" value="newEpAlert" checked>
+									<label for="newEpAlertP"> New Episode Alert</label><br>
+									<input type="checkbox" id="newFollowerP" name="pushNot" value="newFollower" checked>
+									<label for="newFollowerP"> New Follower</label><br>
+									<input type="checkbox" id="friendsActP" name="pushNot" value="friendsAct" checked>
+									<label for="friendsActP"> Friends' Activity</label>
+								</div>
+							</div>
+							<p></p>
+							<div class="col-12 row my-3">
+								<div class="col-12 col-lg-4 my-3">
+									<h3 class="m-0">EMAIL NOTIFICATIONS</h3>
+								</div>
+								<div class="col-12 col-lg-8">
+									<input type="checkbox" id="newEpAlertE" name="emailNot" value="newEpAlert" checked>
+									<label for="newEpAlertE"> New Episode Alert</label><br>
+									<input type="checkbox" id="newFollowerE" name="emailNot" value="newFollower">
+									<label for="newFollowerE"> New Follower</label><br>
+									<input type="checkbox" id="friendsActE" name="emailNot" value="friendsAct">
+									<label for="friendsActE"> Friends' Activity</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<btn class="button primary fit mx-auto my-5 mx-auto" data-toggle="collapse"
+					data-target="#collapseNotifications" aria-expanded="false" aria-controls="collapseNotifications"
+					id="moreNotifications">Show</btn>
+				<!-- PRIVACY -->
+				<h3>Privacy</h3>
+				<section class="card">
+					<div class="card-body">
+						<!-- Accordion -->
+						<div class="collapse" id="collapsePrivacy">
+							<div class="col-12 row">
+								<div class="col-12 col-lg-4 mb-3">
+									<h3 class="m-0">NETWORKING</h3>
+								</div>
+								<div class="col-12 col-lg-8">
+									<input type="checkbox" id="privateAccount" name="pushNot" value="privateAccount"
+										checked>
+									<label for="privateAccount"> Private Account</label><br>
+									<small>When active, your activity is only visible to your friends.</small><br><br>
+								</div>
+							</div>
+							<div class="col-12 row">
+								<div class="col-12 col-lg-4 mb-3">
+									<h3 class="m-0">DATA GATHERING</h3>
+								</div>
+								<div class="col-12 col-lg-8">
+									<input type="checkbox" id="optimizationData" name="pushNot" value="optimizationData"
+										checked>
+									<label for="optimizationData"> Optimization data</label><br>
+									<small>Allow us to collect anonymous stats about your experience, to improve
+										it</small><br><br>
+									<input type="checkbox" id="ourPartners" name="pushNot" value="ourPartners">
+									<label for="ourPartners"> Our Partners</label><br>
+									<small>Let us share your data with our partners so that they can show you costumized
+										ads.</small><br>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<btn class="button primary fit mx-auto my-5 mx-auto" data-toggle="collapse"
+					data-target="#collapsePrivacy" aria-expanded="false" aria-controls="collapsePrivacy"
+					id="morePrivacy">Show</btn>
+				<!-- SECURITY -->
+				<h3>Security</h3>
+				<section class="card">
+					<div class="card-body">
+						<!-- Accordion -->
+						<div class="collapse" id="collapseSecurity">
+							<div class="col-12 row">
+								<h3 class="m-0">IDENTIFICATION</h3>
+								<div class="col-4">
+
+								</div>
+								<div class="col-4">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<btn class="button primary fit mx-auto my-5 mx-auto" data-toggle="collapse"
+					data-target="#collapseSecurity" aria-expanded="false" aria-controls="collapseSecurity"
+					id="moreSecurity">Show</btn>
+				<!-- HELP -->
+				<h3>Help</h3>
+				<section class="card">
+					<div class="card-body">
+						<!-- Accordion -->
+						<div class="collapse" id="collapseHelp">
+							<div class="col-12 row">
+								<h3 class="m-0">Our community can help!</h3>
+								<a href="#">Check out our forum!</a>
+								<br>
+							</div>
+
+							<div class="col-12 row">
+								<!-- Form -->
+								<section>
+									<h2 class="my-3">Our Team is here for you!</h2>
+									<form method="post" action="#">
+										<div class="row gtr-uniform">
+											<div class="col-12 col-lg-6">
+												<input type="text" name="demo-name" id="demo-name" value=""
+													placeholder="Name" />
+											</div>
+											<div class="col-12 col-lg-6">
+												<input type="email" name="demo-email" id="demo-email" value=""
+													placeholder="Email" />
+											</div>
+											<div class="col-12">
+												<select name="demo-category" id="demo-category">
+													<option value="">- Issue -</option>
+													<option value="1">App not working</option>
+													<option value="1">Bug</option>
+													<option value="1">Sugestions</option>
+												</select>
+											</div>
+											<div class="col-6 col-12-small">
+												<input type="checkbox" id="demo-copy" name="demo-copy">
+												<label for="demo-copy">Email me a copy</label>
+											</div>
+											<div class="col-6 col-12-small">
+												<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<label for="demo-human">Not a robot</label>
+											</div>
+											<div class="col-12">
+												<textarea name="demo-message" id="demo-message"
+													placeholder="Tell us your problem!" rows="6"></textarea>
+											</div>
+											<div class="col-12">
+												<ul class="actions">
+													<li>
+														<btn class="button primary" id="SendBttn">Send</btn>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</section>
+							</div>
+						</div>
+					</div>
+				</section>
+				<btn class="button primary fit mx-auto my-5 mx-auto" data-toggle="collapse" data-target="#collapseHelp"
+					aria-expanded="false" aria-controls="collapseHelp" id="moreHelp">Show</btn>
+				<!-- ABOUT -->
+				<h3>About</h3>
+				<section class="card">
+					<div class="card-body">
+						<!-- Accordion -->
+						<div class="collapse" id="collapseAbout">
+							<div class="col-12 row">
+								<div class="col-12 col-lg-4">
+									<h3 class="m-0">ABOUT US</h3>
+								</div>
+								<div class="col-12 col-lg-8">
+									<br>
+									<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac augue et
+										turpis tempor lacinia eu ac libero.</small><br>
+									<small>Donec condimentum, dui ut imperdiet pellentesque, ex felis ultrices est, non
+										eleifend tellus lacus sed dui. In lacinia libero quis vehicula
+										rutrum.</small><br>
+									<small>© 2020</small><br>
+								</div>
+							</div>
+							<div class="col-12 row">
+								<div class="col-12 col-lg-4 my-3">
+									<h3 class="m-0">OUR POLICIES</h3>
+								</div>
+								<div class="col-12 col-lg-8">
+									<br>
+									<a href="#">Privacy Policy</a>
+									<p></p>
+									<a href="#">Usage Terms</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<btn class="button primary fit mx-auto my-5 mx-auto" data-toggle="collapse" data-target="#collapseAbout"
+					aria-expanded="false" aria-controls="collapseAbout" id="moreAbout">Show</btn>
 			</div>
+		</div>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/knockout.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/popper.min.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	
-		<script src="viewmodel/js/global.js"></script>
-		<script src="viewmodel/js/settings.js"></script>
 
-	</body>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/knockout.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<script src="viewmodel/js/global.js"></script>
+	<script src="viewmodel/js/settings.js"></script>
+
+</body>
+
 </html>

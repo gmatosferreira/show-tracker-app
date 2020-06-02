@@ -72,9 +72,9 @@ $(document).ready(function () {
             else
                 value['filename'] = 'https://thetvdb.com/banners/' + value['filename']
             if (!episodeWatched(value)) {
-                html += `<div class="col-4 p-4"><a href="episode.html?series=${id}&se=${season}&ep=${value['airedEpisodeNumber']}"><img class="w-100" src="${value['filename']}" alt=""></a><a href="episode.html?series=${id}&se=${season}&ep=${value['airedEpisodeNumber']}"><h2 class="m-0 text-center">Episode ${value['airedEpisodeNumber']}</h2></a><p class="small text-center">Aired on ${value['firstAired']}</p></div>`;
+                html += `<div class="col-12 col-md-6 col-lg-12 p-4"><a href="episode.html?series=${id}&se=${season}&ep=${value['airedEpisodeNumber']}"><img class="w-100" src="${value['filename']}" alt=""></a><a href="episode.html?series=${id}&se=${season}&ep=${value['airedEpisodeNumber']}"><h2 class="m-0 text-center">Episode ${value['airedEpisodeNumber']}</h2></a><p class="small text-center">Aired on ${value['firstAired']}</p></div>`;
             } else {
-                html += `<div class="col-4 p-4"><a href="episode.html?series=${id}&se=${season}&ep=${value['airedEpisodeNumber']}"><img class="w-100" src="${value['filename']}" alt=""></a><a href="episode.html?series=${id}&se=${season}&ep=${value['airedEpisodeNumber']}"><h2 class="m-0 text-center">Episode ${value['airedEpisodeNumber']}</h2></a><p class="small text-center"><i class="fas fa-check-circle mr-2" title="Watched"></i>Aired on ${value['firstAired']}</p></div>`;
+                html += `<div class="col-12 col-md-6 col-lg-12 p-4"><a href="episode.html?series=${id}&se=${season}&ep=${value['airedEpisodeNumber']}"><img class="w-100" src="${value['filename']}" alt=""></a><a href="episode.html?series=${id}&se=${season}&ep=${value['airedEpisodeNumber']}"><h2 class="m-0 text-center">Episode ${value['airedEpisodeNumber']}</h2></a><p class="small text-center"><i class="fas fa-check-circle mr-2" title="Watched"></i>Aired on ${value['firstAired']}</p></div>`;
             }
         });
 
