@@ -21,7 +21,7 @@
             "releaseDate": "2003-05-30",
             "genres": [
                 "horror",
-                "thriler"
+                "thriller"
             ],
             "id": 666,
             "image": "/banners/movies/666/posters/666.jpg",
@@ -32,19 +32,20 @@
         },
         {
             "aliases": [],
-            "banner": "/banners/movies/7456/backgrounds/7453.jpg",
-            "releaseDate": "2007-09-08",
+            "banner": "/banners/movies/8973/backgrounds/8973.jpg",
+            "releaseDate": "1994-04-13",
             "genres": [
+                "comedy",
+                "crime",
                 "horror",
-                "action",
-                "science-fiction"
+                "thriller"
             ],
-            "id": 7453,
-            "image": "/banners/movies/7456/posters/7453.jpg",
+            "id": 8973,
+            "image": "/banners/movies/8973/posters/8973.jpg",
             "country": "global",
-            "overview": "Film footage from a news crew shows a story about an immigrant man killing his wife and son before committing suicide. The son and wife turn into zombies and kill several medical personnel and police officers, but leave one medic and a reporter bitten before being killed. The narrator, Debra, explains that most of the footage, which was recorded by the cameraman, was never broadcast.",
-            "movieName": "Diary Of The Dead",
-            "slug": "diary-of-the-dead"
+            "overview": "Beverly Sutphin appears to be a typical suburban housewife living with her dentist husband, Eugene, and their teenage children, Misty and Chip, in the suburbs of Baltimore. However, she is secretly a serial killer, murdering people over the most trivial of perceived slights, including mere faux pas.",
+            "movieName": "Serial Mom",
+            "slug": "serial-mom"
         },
         {
             "aliases": [],
