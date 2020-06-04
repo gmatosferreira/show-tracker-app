@@ -40,11 +40,12 @@ $(document).ready(function(){
         $("#main").removeClass("d-none");
         $("#main").hide();
         $("#main").fadeIn();
-        if (userWatchedMovieByID(movie['id'])) {
+        movieId = movie['id']
+        if (userWatchedMovieByID(movieId)) {
             $("#watchedMovie").attr('disabled', true);
             $("#watchedMovie").text('This movie is in your watched list :)');
         }
-        if (userWantToSeeMovieByID(movie['id'])) {
+        if (userWantToSeeMovieByID(movieId)) {
             $("#toSeeMovie").attr('disabled', true);
             $("#toSeeMovie").text('This movie is already in your want to see list :)');
         }
