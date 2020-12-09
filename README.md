@@ -2,7 +2,7 @@
 - Aplicação de gestão de séries e filmes vistos.
 
 ### Como funciona
-> Utilizar o link https://itskikat.github.io/ihc_itskikat/
+Utilizar o link seguinte [Show Tracker App](https://ihc.gmatos.pt/)
 
 Para testar as funcionalidades utilizar as credenciais seguintes (necessário remover politicas CORS) [CORS Unblock Extension](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en)
 - email: *user@teste.pt*
