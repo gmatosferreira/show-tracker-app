@@ -1,15 +1,44 @@
-# Interação Humano-Computador, Projeto Final
-- Aplicação de gestão de séries e filmes vistos.
+# Web app to track series and movies
 
-### Como funciona
-Utilizar o link seguinte [Show Tracker App](https://ihc.gmatos.pt/)
+This project was developed in the context of [Human-computer Interaction](https://www.ua.pt/en/uc/2484) curricular unit, part of the Computer Science Bachelor at [Aveiro University](https://www.ua.pt/).
 
-Para testar as funcionalidades utilizar as credenciais seguintes (necessário remover politicas CORS) [CORS Unblock Extension](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en)
-- email: *user@teste.pt*
-- password: *teste*
+It was graded **B+** (the next and highest level is MB).
 
 
-----------
+
+## About the project
+
+In this project we were supposed to apply the Human-computer interaction concepts that we have learning during the semester. We have chosen to develop a web app to track series and movies watching.
+
+
+
+## Test it
+
+You can see a live demo of this repository at https://ihc.gmatos.pt/.
+
+To test its functionalities you can log in with the following data:
+
+- Email: *user@teste.pt*
+- Password: *teste*
+
+
+
+## Development process
+
+Focused on the UI and UX, we have followed a user-centric development approach that consisted of 3 phases.
+
+1. Requirement analysis;
+2. Low fidelity prototype;
+3. Second prototype (the code on this repository).
+
+
+
+## Technology stack
+
+For the low fidelity prototype we have used [Balsamiq Cloud](https://balsamiq.cloud/). For the second prototype we have adapted a template that we found online with HTML, CSS and Javascript.
+
+
+
 ## Authors
 ##### [Francisca Barros](https://github.com/itskikat/) (NMEC: 93102)
 ##### [Gonçalo Matos](https://github.com/gmatosferreira) (NMEC: 92972)
