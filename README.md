@@ -39,6 +39,14 @@ For the low fidelity prototype we have used [Balsamiq Cloud](https://balsamiq.cl
 
 
 
+
+
+## Report
+
+The report is available (in presentation format) [here](presentation.pdf).
+
+
+
 ## Authors
 ##### [Francisca Barros](https://github.com/itskikat/) (NMEC: 93102)
 ##### [Gonçalo Matos](https://github.com/gmatosferreira) (NMEC: 92972)
